@@ -187,6 +187,17 @@ catálogo de secrets-vault, con copia a ambos orquestadores.
    Solo entonces actualizar producción. No activar `BOOKING_MODE` como efecto
    colateral de una actualización.
 
+Cierre obligatorio del ensayo: revocar su API key en Cal y verificar 401; borrar
+`RBLN /cal REHEARSAL_API_KEY` de Infisical y avisar a secrets-vault para retirar
+el nombre del catálogo. Si la cuenta fixture usó la clave inicial de bootstrap,
+rotarla a un valor aleatorio descartado y comprobar que la inicial ya no entra.
+Cerrar y registrar las sesiones. Detener los deployments y aplicar la política
+de retención autorizada: el ensayo del 17/10 se eliminó completo con DB, Redis
+y volúmenes por orden final del orquestador. Registrar cada hora y comprobar
+por GraphQL que no quedan servicios activos ni instancias de volumen. Railway
+retiene volúmenes eliminados hasta 48 h antes de la purga definitiva. Nunca
+operar sobre los IDs de producción.
+
 Rollback de aplicación: volver a los digests anteriores en `source.image` y
 desplegar web/API una vez. Primero revisar compatibilidad de la imagen anterior
 con el esquema migrado. Un downgrade de código no revierte una migración.

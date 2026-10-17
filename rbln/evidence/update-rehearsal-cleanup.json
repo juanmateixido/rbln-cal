@@ -1,0 +1,166 @@
+{
+  "key_revoked_at": "2026-10-17T15:31:40.097Z",
+  "revoked_key_http": 401,
+  "key_rejection_verified_at": "2026-10-17T15:31:40.971Z",
+  "infisical_key_deleted_at": "2026-10-17T15:31:52.776363+00:00",
+  "deleted_secret_path": "RBLN /cal REHEARSAL_API_KEY",
+  "fixture_password_rotated_at": "2026-10-17T15:32:17.453Z",
+  "fixture_password_discarded": true,
+  "fixture_initial_login_rejected": true,
+  "fixture_initial_login_checked_at": "2026-10-17T15:32:19.561Z",
+  "environment_id": "dc2cb79c-a017-4b84-b3df-68f012d26b5d",
+  "services_stopped": [
+    {
+      "service": "web",
+      "deployment": "fc30a3a2-ce8e-4f85-83d9-6cb555532348",
+      "stop_requested_at": "2026-10-17T15:33:00.551224+00:00"
+    },
+    {
+      "service": "api",
+      "deployment": "ecc72220-f568-421b-a27c-74e9be3472e8",
+      "stop_requested_at": "2026-10-17T15:33:03.044654+00:00"
+    },
+    {
+      "service": "sink",
+      "deployment": "78a5109e-a94d-445e-8dca-cee9763ff254",
+      "stop_requested_at": "2026-10-17T15:33:05.596795+00:00"
+    },
+    {
+      "service": "redis",
+      "deployment": "a740a9fe-6893-407a-9d0c-548efb4067a2",
+      "stop_requested_at": "2026-10-17T15:33:06.665618+00:00"
+    },
+    {
+      "service": "postgres",
+      "deployment": "704c87d3-91c3-4b53-ab22-a15a4616a98a",
+      "stop_requested_at": "2026-10-17T15:33:07.612536+00:00"
+    }
+  ],
+  "final_instruction": "Delete full rehearsal environment and its DB/Redis volumes, superseding preservation",
+  "environment_deleted_at": "2026-10-17T15:33:34.814888+00:00",
+  "volumes_deleted": [
+    {
+      "id": "e2c96c5e-fc40-419a-8bcb-086685aacff5",
+      "at": "2026-10-17T15:33:35.531618+00:00"
+    },
+    {
+      "id": "0f754d57-6eda-4ab2-a3e9-6b82e67ed946",
+      "at": "2026-10-17T15:33:35.923608+00:00"
+    }
+  ],
+  "services_deleted": [
+    {
+      "id": "ef5dd9ad-c268-41d7-a5ce-b59ffcd67d3f",
+      "name": "postgres",
+      "at": "2026-10-17T15:34:44.011551+00:00"
+    },
+    {
+      "id": "1cc04eb7-5e4f-4d9b-8b76-d115078366e4",
+      "name": "redis",
+      "at": "2026-10-17T15:34:44.613341+00:00"
+    },
+    {
+      "id": "2b85eb27-e060-4cff-9f11-15646b690add",
+      "name": "web",
+      "at": "2026-10-17T15:34:45.204479+00:00"
+    },
+    {
+      "id": "02f1eecb-5b29-4200-8e76-c3e03adfc134",
+      "name": "api",
+      "at": "2026-10-17T15:34:45.822772+00:00"
+    },
+    {
+      "id": "3918a0b2-919e-4127-a3d9-e638879947ae",
+      "name": "sink",
+      "at": "2026-10-17T15:34:46.435470+00:00"
+    }
+  ],
+  "deletion_verified_at": "2026-10-17T15:35:06.900602+00:00",
+  "environment_deletion": {
+    "id": "dc2cb79c-a017-4b84-b3df-68f012d26b5d",
+    "deletedAt": "2026-10-17T15:34:24.781Z",
+    "volumeInstances": {
+      "edges": []
+    }
+  },
+  "remaining_project_resources": {
+    "environments": {
+      "edges": [
+        {
+          "node": {
+            "id": "3082cdf3-2bfe-4ab5-9f6c-d56bbac68ad8",
+            "name": "production"
+          }
+        }
+      ]
+    },
+    "volumes": {
+      "edges": [
+        {
+          "node": {
+            "id": "02d81a56-11a8-4966-9d47-fd9998e13213",
+            "name": "postgres-volume"
+          }
+        },
+        {
+          "node": {
+            "id": "0f754d57-6eda-4ab2-a3e9-6b82e67ed946",
+            "name": "rehearsal-redis-volume"
+          }
+        },
+        {
+          "node": {
+            "id": "dd152646-3495-4bd0-b814-e225a2a51c22",
+            "name": "redis-volume"
+          }
+        },
+        {
+          "node": {
+            "id": "e2c96c5e-fc40-419a-8bcb-086685aacff5",
+            "name": "rehearsal-postgres-volume"
+          }
+        }
+      ]
+    },
+    "services": {
+      "edges": [
+        {
+          "node": {
+            "id": "12e40ca8-be7a-4763-adef-0826b0bb5211",
+            "name": "postgres",
+            "deletedAt": null
+          }
+        },
+        {
+          "node": {
+            "id": "199a4c06-58f0-4f56-9f97-036b55ed2864",
+            "name": "cal-web",
+            "deletedAt": null
+          }
+        },
+        {
+          "node": {
+            "id": "54439aa0-763e-4690-85c9-974dbf3f659a",
+            "name": "cal-api",
+            "deletedAt": null
+          }
+        },
+        {
+          "node": {
+            "id": "5d57b08a-8e0b-4397-9c5f-520ce15bc7b1",
+            "name": "redis",
+            "deletedAt": null
+          }
+        },
+        {
+          "node": {
+            "id": "f69bedb3-f5f0-4a19-bfbe-cc2b766400bd",
+            "name": "t0-sink",
+            "deletedAt": null
+          }
+        }
+      ]
+    }
+  },
+  "volume_deletion_note": "volumeDelete accepted for both. Railway may retain deleted volumes for up to 48 h; no live volume instances remain."
+}

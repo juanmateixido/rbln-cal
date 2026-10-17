@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-17T15:25:43.917905+00:00",
+  "environment_id": "dc2cb79c-a017-4b84-b3df-68f012d26b5d",
+  "isolated_database_redis_volumes": [
+    {
+      "id": "e2c96c5e-fc40-419a-8bcb-086685aacff5",
+      "name": "rehearsal-postgres-volume"
+    },
+    {
+      "id": "0f754d57-6eda-4ab2-a3e9-6b82e67ed946",
+      "name": "rehearsal-redis-volume"
+    }
+  ],
+  "images": {
+    "revision": "7d916c70353d0248bfbde12d35b934d4583b3685",
+    "api": "ghcr.io/juanmateixido/rbln-cal-api@sha256:52bd196aa2c92d8a0a63397c48d3d6bc8d14cd58f623de896226ed23179140bd",
+    "web": "ghcr.io/juanmateixido/rbln-cal-web@sha256:c98fc1225b07a4a0079f5c8e47020cf286383262d573498c8f5e6cff24cab400"
+  },
+  "deployments": {
+    "postgres": "704c87d3-91c3-4b53-ab22-a15a4616a98a",
+    "redis": "a740a9fe-6893-407a-9d0c-548efb4067a2",
+    "sink": "78a5109e-a94d-445e-8dca-cee9763ff254",
+    "api": "ecc72220-f568-421b-a27c-74e9be3472e8",
+    "web": "fc30a3a2-ce8e-4f85-83d9-6cb555532348"
+  },
+  "health": {
+    "api": 200,
+    "web": 200
+  },
+  "fixture_used_initial_bootstrap_password": true,
+  "fixture_password_source": "RBLN /cal CAL_ADMIN_INITIAL_PASSWORD",
+  "cleanup_required": "Revoke key, verify401, delete isolated environment/volumes, delete rehearsal secret; production untouched"
+}

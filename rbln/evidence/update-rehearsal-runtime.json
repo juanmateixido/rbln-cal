@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-17T15:25:07.261489+00:00",
+  "upstream_sha": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+  "checks": {
+    "api_key": {
+      "status": "PASS",
+      "http": 200
+    },
+    "hidden_authenticated_event": {
+      "status": "PASS",
+      "http": 200,
+      "event_type_id": 1
+    },
+    "confirmation_blocks_unconfirmed": {
+      "status": "PASS",
+      "policy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      }
+    },
+    "slots_available": {
+      "status": "PASS",
+      "count": 90
+    },
+    "anonymous_rejected": {
+      "status": "PASS",
+      "http": 401
+    },
+    "pending_created": {
+      "status": "PASS",
+      "http": 201,
+      "state": "pending"
+    },
+    "uid_format": {
+      "status": "PASS",
+      "length": 22,
+      "uuid": false,
+      "alphanumeric": true,
+      "sha256": "05270396998d5eb9f3aab1bd001429238cf534d64181976b555c125f4bbe771d"
+    },
+    "pending_slot_immediate": {
+      "status": "OBSERVED",
+      "visible": true,
+      "cache_default_ms": 2000
+    },
+    "pending_blocks_slot_after_cache": {
+      "status": "PASS",
+      "waited_seconds": 3.2
+    },
+    "duplicate_blocked": {
+      "status": "PASS",
+      "http": 400,
+      "error_code": "BadRequestException",
+      "different_synthetic_attendee": true
+    },
+    "confirm": {
+      "status": "PASS",
+      "http": 200
+    },
+    "confirm_readback": {
+      "status": "PASS",
+      "http": 200
+    },
+    "confirm_repeated": {
+      "status": "PASS",
+      "repeat_http": 400,
+      "final_state": "accepted",
+      "captured_webhooks_before": 2
+    },
+    "reschedule": {
+      "status": "PASS",
+      "http": 201
+    },
+    "cancel": {
+      "status": "PASS",
+      "http": 200
+    },
+    "new_pending": {
+      "status": "PASS",
+      "http": 201
+    },
+    "decline": {
+      "status": "PASS",
+      "http": 200
+    },
+    "decline_releases_slot": {
+      "status": "PASS",
+      "waited_seconds": 3.2
+    },
+    "signed_webhooks": {
+      "status": "PASS",
+      "triggers": [
+        "BOOKING_CANCELLED",
+        "BOOKING_CREATED",
+        "BOOKING_REJECTED",
+        "BOOKING_REQUESTED",
+        "BOOKING_RESCHEDULED"
+      ],
+      "capture_count": 6,
+      "captured_mail_count": 11
+    },
+    "cleanup": {
+      "status": "PASS",
+      "remaining": 0
+    }
+  }
+}
