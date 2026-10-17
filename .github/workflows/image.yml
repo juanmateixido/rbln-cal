@@ -2,7 +2,7 @@ name: RBLN images
 on:
   push:
     branches: [rbln]
-    paths: ['Dockerfile', 'apps/**', 'packages/**', 'scripts/start.sh', 'scripts/seed-app-store.ts', 'package.json', 'yarn.lock', '.yarn/**', '.github/workflows/image.yml']
+    paths: ['Dockerfile', '.dockerignore', 'apps/**', 'packages/**', 'deploy/build-*', 'deploy/check-public-image.py', 'scripts/start.sh', 'scripts/seed-app-store.ts', 'package.json', 'yarn.lock', '.yarn/**', '.github/workflows/image.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -39,10 +39,14 @@ jobs:
         ports: ['6379:6379']
     env:
       IMAGE: ghcr.io/juanmateixido/rbln-cal-${{ matrix.app }}
-      TAG: diy-54343aa-rbln.${{ github.run_number }}-${{ github.run_attempt }}
+      TAG: sha-${{ github.sha }}
       DATABASE_URL: postgresql://postgres@127.0.0.1:5432/calendso
     steps:
       - uses: actions/checkout@v4
+      - name: Reject private build inputs
+        run: |
+          python3 deploy/test-public-image.py
+          python3 deploy/check-public-image.py
       - name: Make room on the disposable runner
         run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
       - uses: docker/setup-buildx-action@v3
@@ -67,12 +71,17 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.licenses=MIT
           build-args: |
-            DATABASE_URL=${{ env.DATABASE_URL }}
-            DATABASE_DIRECT_URL=${{ env.DATABASE_URL }}
             NEXT_PUBLIC_WEBAPP_URL=https://agenda.rebelion.training
             NEXT_PUBLIC_APP_NAME=RBLN Agenda
             CALCOM_TELEMETRY_DISABLED=1
             MAX_OLD_SPACE_SIZE=10240
+          secret-files: |
+            rbln_build_fixtures=deploy/build-fixtures.sh
+      - name: Reject private names in image metadata and layers
+        run: python3 deploy/check-public-image.py --image "$IMAGE:$TAG"
+      - name: Test request header redaction in the API image
+        if: matrix.app == 'api' && hashFiles('apps/api/v2/src/lib/filterReqHeaders.spec.ts') != ''
+        run: docker run --rm "$IMAGE:$TAG" yarn workspace @calcom/api-v2 exec jest src/lib/filterReqHeaders.spec.ts --runInBand
       - name: Smoke test migrations and HTTP startup
         env:
           APP: ${{ matrix.app }}
@@ -103,6 +112,10 @@ jobs:
           exit 1
       - name: Publish immutable image
         run: |
+          if docker manifest inspect "$IMAGE:$TAG" >/dev/null 2>&1; then
+            echo 'Refusing to overwrite an existing SHA tag'
+            exit 1
+          fi
           docker push "$IMAGE:$TAG"
           docker pull "$IMAGE:$TAG"
           docker image inspect "$IMAGE:$TAG" --format '{{json .RepoDigests}}' >> "$GITHUB_STEP_SUMMARY"

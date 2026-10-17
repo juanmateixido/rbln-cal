@@ -29,13 +29,23 @@ al orquestador para su paso humano agrupado. DNS no forma parte del wizard.
 No ejecutar `yarn install`, Next/Turbo/Nest builds ni Docker builds en bee.
 [Actions](https://github.com/juanmateixido/rbln-cal/actions/workflows/image.yml)
 construye ambas imágenes desde la rama `rbln`, prueba migraciones y arranque HTTP
-con Postgres/Redis efímeros, y publica una etiqueta inmutable por ejecución:
-`diy-54343aa-rbln.<run_number>-<run_attempt>`.
+con Postgres/Redis efímeros, y publica una etiqueta por commit: `sha-<SHA completo>`.
+La CI rechaza sobrescribirla y ejecuta el check de imagen pública antes de publicar.
+Los builds iniciales anteriores al control usaban `diy-54343aa-rbln.*`; no son
+la imagen aprobada para abrir sesiones o cargar credenciales de usuarios.
 
 Registrar siempre el digest OCI real y SHA del fork en T0 antes del despliegue.
 Configurar Railway con `ghcr.io/...@sha256:...`, nunca `latest`. GHCR debe ser
-público como el fork; si no lo es, publicar el paquete o usar un token de pull
-Viewer/solo `read:packages`, guardado en Infisical. No usar un token Admin.
+público como el fork. No se usa ni crea un PAT/read:packages. Si hace falta
+cambiar visibilidad, ejecutar la etapa `--images sha-<SHA>` del wizard con Juanma;
+es independiente del GO de SMTP/Google y no abre sesiones de Giuliana.
+Los únicos valores de build son configuración pública y los fixtures literales
+descritos en [Imagen pública](../README-RBLN.md#imagen-pública); nunca Infisical.
+
+La alternativa de consultar la integración GitHub de Railway por GraphQL
+(`gitHubRepoAccessAvailable`) devolvió `Not Authorized` con el token del workspace
+el 17/10. No se confirmó acceso ni se inició un build remoto. El camino aprobado
+sigue siendo GHCR público; están prohibidos los registros anónimos/efímeros.
 
 El arranque de web de upstream ejecuta `yarn prisma migrate deploy`, carga las
 apps y arranca Next. Ejecutar migraciones primero con web y arrancar API después;
