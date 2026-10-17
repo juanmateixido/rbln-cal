@@ -46,7 +46,7 @@ jobs:
             node "$TEST_DEPS/node_modules/jest/bin/jest.js" --config "$RUNNER_TEMP/log-jest.json" \
               --runInBand src/lib/filterReqHeaders.spec.ts src/filters/http-exception.filter.spec.ts \
               src/filters/error-log-privacy.spec.ts src/lib/safe-parse/safe-parse.spec.ts \
-              src/modules/oauth-clients/services/oauth-log-privacy.spec.ts "$@"
+              src/modules/oauth-clients/services/oauth-log-privacy.spec.ts src/modules/redis/redis.service.spec.ts "$@"
           }
           test_logs
           for file in src/lib/filterReqHeaders.ts src/lib/safe-parse/safe-parse.ts \
@@ -54,7 +54,7 @@ jobs:
             src/modules/auth/oauth2/filters/oauth2-http-exception.filter.ts \
             src/modules/conferencing/controllers/conferencing.controller.ts \
             src/modules/stripe/controllers/stripe.controller.ts \
-            src/modules/oauth-clients/services/oauth-flow.service.ts; do
+            src/modules/oauth-clients/services/oauth-flow.service.ts src/modules/redis/redis.service.ts; do
             git show "54343aa685ae8f33159d2f485ec4a57bad5c574a:apps/api/v2/$file" > "apps/api/v2/$file"
           done
           if test_logs --json --outputFile="$RUNNER_TEMP/anchor-results.json"; then
@@ -68,7 +68,7 @@ jobs:
             assert any(case['status']=='failed' and 'keeps '+point+' credentials' in case['fullName'] for case in cases), point
           for name in ('Prisma', 'TRPC', 'Zod', 'CalendarService', 'OAuth2'):
             assert any(case['status']=='failed' and name+' filter keeps all markers' in case['fullName'] for case in cases), name
-          for point in ('input and issue', 'conferencing callback', 'stripe callback', 'Redis command'):
+          for point in ('input and issue', 'conferencing callback', 'stripe callback', 'Redis command', 'AUTH password'):
             assert any(case['status']=='failed' and 'keeps '+point in case['fullName'] for case in cases), point
           responses=[case for case in cases if 'preserves anchor HTTP response' in case['fullName']]
           assert len(responses)==18 and all(case['status']=='passed' for case in responses)

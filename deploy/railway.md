@@ -48,8 +48,11 @@ el 17/10. No se confirmó acceso ni se inició un build remoto. El camino aproba
 sigue siendo GHCR público; están prohibidos los registros anónimos/efímeros.
 
 El arranque de web de upstream ejecuta `yarn prisma migrate deploy`, carga las
-apps y arranca Next. Ejecutar migraciones primero con web y arrancar API después;
-no iniciar dos migradores a la vez. La API usa el mismo Postgres y claves de
+apps y arranca Next. Normalmente se migra primero con web y arranca API después.
+Para reproducir la fuga sin abrir el setup web, el 17/10 se arrancó primero API
+con `preDeployCommand=["yarn prisma migrate deploy"]` en Railway. Antes del
+primer arranque web, retirar ese comando de API y comprobar que terminó la
+migración anterior. No iniciar dos migradores a la vez. La API usa el mismo Postgres y claves de
 NextAuth/cifrado, y exige Redis. `JWT_SECRET`, `API_URL`, `DATABASE_DIRECT_URL`,
 `DATABASE_READ_URL`, `DATABASE_WRITE_URL` figuran en la configuración del ancla.
 `CALCOM_SERVICE_ACCOUNT_ENCRYPTION_KEY` también figura en `.env.example`, pero

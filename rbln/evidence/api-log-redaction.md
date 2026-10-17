@@ -57,6 +57,22 @@ guardas de configuración y seis tests de sync. La CI repite el contraste y
 verifica tipos de los archivos modificados con las dependencias de la imagen
 API fijada; su resultado para el nuevo head se registra tras ejecutarse.
 
+CI de regresión del head `c3bd085d63ba4520a2541874e7561959a7e8d833`:
+[privacy PASS, run 39041319620](https://github.com/juanmateixido/rbln-cal/actions/runs/39041319620/job/117421239250).
+Repite 52 pases y exige los 29 fallos esperados contra el ancla; tipos específicos
+en el otro job del mismo run todavía pendientes al registrar esta evidencia.
+
+Ronda 4: `RedisService.onModuleDestroy()` también omite el error crudo de
+`quit()`: ioredis puede adjuntar un comando AUTH pendiente con su contraseña.
+La regresión nueva usa un error AUTH ficticio, verifica ausencia de contraseña,
+mensaje y `command.args`, y conserva el cierre sin propagación de la excepción.
+**53/53 tests locales pasan; contra el ancla, 30 rojos esperados y 23 verdes.**
+Tipos estrictos de Redis y su test, con ioredis 5.3.2, también pasan localmente.
+El job `types` del head completo debe pasar antes del merge: el fallo de c3bd085
+se debió a omitir `packages/types/*.d.ts` al acotar include; e0a1509 lo restaura.
+Los residuales aceptados por el orquestador están listados en README/PATCHES,
+condicionados al uso de API key por hash, sin OAuth de plataforma/atoms/Stripe.
+
 El comando completo solicitado `yarn type-check:ci --force --concurrency=1`
 pasó en la imagen baseline en
 [run 39040608795](https://github.com/juanmateixido/rbln-cal/actions/runs/39040608795)
@@ -89,6 +105,14 @@ excluido mediante `.git/info/exclude` y comprobado con `git check-ignore`.
 No se commitea. No se copiaron valores de Infisical al request: todos los
 marcadores se inventaron para esta prueba. SMTP captura/BOOKING_MODE off
 verificados antes de ejecutarla.
+
+Callbacks públicos, mismo deployment sin parche, 14:35 UTC: GET de
+`/v2/conferencing/zoom/oauth/callback` y `/v2/stripe/save`, con state/code/error y
+error_description completamente ficticios. Ambos devuelven **301 al fallback
+esperado** y ambos registran el marcador completo de error_description.
+No se siguió la redirección ni se creó credencial, usuario o sesión. Crudos y
+resultados locales excluidos: `local-only/conferencing-before*.json` y
+`local-only/stripe-before*.json`. Repetir después con los mismos marcadores.
 
 **Reproducción HTTP después del parche: PENDIENTE.** No sustituirla por tests.
 Enviar un bearer, body y query inventados a una ruta inexistente de la imagen sin parche;

@@ -45,9 +45,10 @@ Archivos de aplicación divergentes que debe preservar el sync:
 - `apps/api/v2/src/modules/conferencing/controllers/conferencing.controller.ts`
 - `apps/api/v2/src/modules/stripe/controllers/stripe.controller.ts`
 - `apps/api/v2/src/modules/oauth-clients/services/oauth-flow.service.ts`
+- `apps/api/v2/src/modules/redis/redis.service.ts`
 
 Conservar también `filterReqHeaders.spec.ts`, `http-exception.filter.spec.ts`,
-`error-log-privacy.spec.ts`, `safe-parse.spec.ts`, `oauth-log-privacy.spec.ts`,
+`error-log-privacy.spec.ts`, `safe-parse.spec.ts`, `oauth-log-privacy.spec.ts`, `redis.service.spec.ts`,
 el workflow `rbln-log-tests.yml` y la guarda `scripts/rbln/check-log-policy.cjs`.
 Los middleware/interceptor informativos de API no se parchean: `LOG_LEVEL=warn`
 los suprime, y la CI/smoke rechazan el nivel por defecto `info`.
@@ -59,6 +60,27 @@ de tokens omite el error Redis completo y sus `command.args`. Las regresiones
 capturan los loggers y comprueban redirecciones/fallback. Los seis filtros
 conservan exactamente las respuestas del ancla, incluso el comportamiento de
 la cabecera `X-Request-Id`; solo el log aprovecha el identificador en minúsculas.
+
+En el ancla, `apps/api/v2/src/modules/redis/redis.service.ts:42` registra completo
+el error de `quit()`. Un fallo AUTH con comandos pendientes puede incluir la
+contraseña en `command.args` (ioredis 5.3.2); esta conexión también se comparte
+con throttling (`apps/api/v2/src/app.module.ts:72`). El parche conserva solo
+evento fijo, tipo y código, sin cambiar el cierre. La regresión captura un error
+AUTH con contraseña ficticia y debe fallar sin el parche.
+
+Residuales API v1 aceptados por el orquestador tras ronda 3: el uso de RBLN se
+limita a API key por hash, sin OAuth de plataforma, atoms ni Stripe. Persisten
+logs crudos en estas rutas del ancla (todas bajo `apps/api/v2/src/`):
+
+- `platform/bookings/2024-08-13/services/input.service.ts:734`
+- `modules/auth/oauth2/services/oauth2-error.service.ts:52,66,70`
+- `modules/auth/oauth2/controllers/atoms-oauth2.controller.ts:52`
+- `modules/prisma/prisma-read.service.ts:71,80`
+- `modules/prisma/prisma-write.service.ts:77,86`
+
+Los dos últimos son errores de conexión/desconexión. Esta aceptación no afirma
+que todos los logs sean inocuos: preservar la lista en el sync y revisar el
+riesgo antes de habilitar cualquiera de los usos excluidos.
 
 Riesgo residual web v1: `packages/features/auth/lib/next-auth-options.ts:154,430,569`
 y `packages/app-store/_utils/oauth/OAuthManager.ts:340` pueden imprimir credenciales,

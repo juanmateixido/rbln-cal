@@ -30,6 +30,21 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   sync en README. Regresiones con captura de logger y contraste contra el ancla;
   datos/fallback de safeParse, redirecciones, estados, mensajes y cabeceras HTTP
   se conservan. El requestId en el log no altera el valor de la cabecera HTTP.
+- Cierre Redis — `apps/api/v2/src/modules/redis/redis.service.ts:42` del ancla
+  registraba el error completo de `quit()`. Un fallo AUTH con comandos pendientes
+  puede incluir la contraseña en `command.args` de ioredis 5.3.2; afecta a la
+  conexión compartida de throttling (`apps/api/v2/src/app.module.ts:72`). Se
+  registra solo evento fijo, tipo/código, conservando el comportamiento del
+  cierre. Preservar `redis.service.spec.ts`, que reproduce el rechazo AUTH con
+  contraseña ficticia y falla contra el ancla.
+- Residuales API v1 aceptados por el orquestador, sin parche: bajo
+  `apps/api/v2/src/`, `platform/bookings/2024-08-13/services/input.service.ts:734`,
+  `modules/auth/oauth2/services/oauth2-error.service.ts:52,66,70`,
+  `modules/auth/oauth2/controllers/atoms-oauth2.controller.ts:52` y errores de
+  conexión/desconexión de `modules/prisma/prisma-read.service.ts:71,80` y
+  `modules/prisma/prisma-write.service.ts:77,86`. El uso aprobado es API key por
+  hash, sin OAuth de plataforma, atoms ni Stripe. Conservar esta lista durante
+  el sync; reevaluarla antes de ampliar ese uso, sin asumir logs libres de secretos.
 - Guarda, sin parche web/middleware informativos — `deploy/sync-vars.py` fija
   API `LOG_LEVEL=warn`, `NEXTAUTH_DEBUG` vacío y `NEXT_PUBLIC_LOGGER_LEVEL=4`.
   `scripts/rbln/check-log-policy.cjs` los verifica en CI y dentro del contenedor
