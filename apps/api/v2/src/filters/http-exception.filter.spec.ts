@@ -36,6 +36,7 @@ describe("HttpExceptionFilter log privacy", () => {
     expect(logged).toContain("privacy-probe-id");
     expect(logged).toContain("/v2/privacy-probe");
     expect(response.statusCode).toBe(404);
+    expect(response.getHeader("X-Request-Id")).toBe("unknown-request-id");
     expect(response._getJSONData().error.message).toBe(exception.message);
     expect(response._getJSONData().path).toBe(request.url);
   });

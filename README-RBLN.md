@@ -41,11 +41,24 @@ Archivos de aplicación divergentes que debe preservar el sync:
 - `apps/api/v2/src/filters/zod-exception.filter.ts`
 - `apps/api/v2/src/filters/calendar-service-exception.filter.ts`
 - `apps/api/v2/src/modules/auth/oauth2/filters/oauth2-http-exception.filter.ts`
+- `apps/api/v2/src/lib/safe-parse/safe-parse.ts`
+- `apps/api/v2/src/modules/conferencing/controllers/conferencing.controller.ts`
+- `apps/api/v2/src/modules/stripe/controllers/stripe.controller.ts`
+- `apps/api/v2/src/modules/oauth-clients/services/oauth-flow.service.ts`
 
 Conservar también `filterReqHeaders.spec.ts`, `http-exception.filter.spec.ts`,
+`error-log-privacy.spec.ts`, `safe-parse.spec.ts`, `oauth-log-privacy.spec.ts`,
 el workflow `rbln-log-tests.yml` y la guarda `scripts/rbln/check-log-policy.cjs`.
 Los middleware/interceptor informativos de API no se parchean: `LOG_LEVEL=warn`
 los suprime, y la CI/smoke rechazan el nivel por defecto `info`.
+
+`safeParse` registra solo un evento fijo y los códigos de issues; conserva datos
+parseados, fallback y silencio con `logError=false`. Los callbacks OAuth de
+conferencing/Stripe omiten mensajes crudos y `error_description`; la propagación
+de tokens omite el error Redis completo y sus `command.args`. Las regresiones
+capturan los loggers y comprueban redirecciones/fallback. Los seis filtros
+conservan exactamente las respuestas del ancla, incluso el comportamiento de
+la cabecera `X-Request-Id`; solo el log aprovecha el identificador en minúsculas.
 
 Riesgo residual web v1: `packages/features/auth/lib/next-auth-options.ts:154,430,569`
 y `packages/app-store/_utils/oauth/OAuthManager.ts:340` pueden imprimir credenciales,
@@ -53,6 +66,12 @@ sesiones o el bearer de Google si se habilita debug. No se parchean en v1.
 El sync fija `NEXTAUTH_DEBUG` vacío (evita cadenas truthy) y
 `NEXT_PUBLIC_LOGGER_LEVEL=4` (warn); la guarda de CI/smoke exige nivel 4–6 y debug
 ausente/vacío. No habilitar debug para investigar una incidencia con credenciales.
+
+También queda riesgo residual de URL con query en logs **de error**, que
+**sobreviven a warn**: `packages/lib/server/defaultResponder.ts:56`,
+`packages/lib/tracing/index.ts:72` y `apps/web/app/api/parseRequestData.ts:36`.
+La guarda de nivel no los elimina. Por decisión del orquestador, siguen sin
+parche web en v1; tratar los logs como sensibles y no asumir que warn los sanea.
 
 ## Operación
 

@@ -16,7 +16,7 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
     const statusCode = exception.getStatus();
     const requestId =
       request.headers["X-Request-Id"] ?? request.headers["x-request-id"] ?? "unknown-request-id";
-    response.setHeader("X-Request-Id", requestId.toString());
+    response.setHeader("X-Request-Id", (request.headers["X-Request-Id"] ?? "unknown-request-id").toString());
     const { userEmail: _userEmail, ...userContext } = extractUserContext(request);
     this.logger.error("Http Exception Filter", {
       errorType: exception.name,

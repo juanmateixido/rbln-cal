@@ -20,12 +20,27 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   la query). Conservan requestId y metadatos de error; respuestas sin cambios.
   `x-cal-client-id` deja de registrarse. Las pruebas capturan Logger.error con
   marcadores ficticios independientes en header/body/query y mantienen el 404.
+- Ronda 3 — `lib/safe-parse/safe-parse.ts` registra solo mensaje fijo y códigos
+  de issues, nunca input, schema, issues completos ni stack. Los callbacks de
+  `modules/conferencing/controllers/conferencing.controller.ts` y
+  `modules/stripe/controllers/stripe.controller.ts` omiten el mensaje crudo y
+  `error_description`. `modules/oauth-clients/services/oauth-flow.service.ts`
+  conserva solo tipo/código del error Redis, sin `command.args` ni token.
+  Todas estas rutas son relativas a `apps/api/v2/src/`; listado completo para
+  sync en README. Regresiones con captura de logger y contraste contra el ancla;
+  datos/fallback de safeParse, redirecciones, estados, mensajes y cabeceras HTTP
+  se conservan. El requestId en el log no altera el valor de la cabecera HTTP.
 - Guarda, sin parche web/middleware informativos — `deploy/sync-vars.py` fija
   API `LOG_LEVEL=warn`, `NEXTAUTH_DEBUG` vacío y `NEXT_PUBLIC_LOGGER_LEVEL=4`.
   `scripts/rbln/check-log-policy.cjs` los verifica en CI y dentro del contenedor
   del smoke. Riesgo residual: `next-auth-options.ts:154,430,569` (credenciales y
   sesión) y `packages/app-store/_utils/oauth/OAuthManager.ts:340` (bearer Google)
   siguen teniendo logs debug; nunca bajar el nivel ni habilitar debug en v1.
+  Riesgo residual adicional que **sobrevive a warn**: URL con query en logs de
+  error de `packages/lib/server/defaultResponder.ts:56`,
+  `packages/lib/tracing/index.ts:72` y `apps/web/app/api/parseRequestData.ts:36`.
+  La configuración no redacta estas rutas; siguen sin parche web en v1 por
+  decisión del orquestador. No considerar esos logs libres de datos sensibles.
 - P-01 — `.github/workflows/image.yml`: construye web y API v2 solo en GitHub
   Actions, prueba migraciones/arranque y publica imágenes GHCR con etiqueta
   `sha-<commit completo>` y revisión OCI. Sin credenciales de

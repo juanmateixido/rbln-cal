@@ -36,7 +36,7 @@ export class PrismaExceptionFilter implements ExceptionFilter {
     const request = ctx.getRequest<Request>();
     const requestId =
       request.headers["X-Request-Id"] ?? request.headers["x-request-id"] ?? "unknown-request-id";
-    response.setHeader("X-Request-Id", requestId.toString());
+    response.setHeader("X-Request-Id", (request.headers["X-Request-Id"] ?? "unknown-request-id").toString());
 
     const { userEmail: _userEmail, ...userContext } = extractUserContext(request);
     this.logger.error("PrismaError", {

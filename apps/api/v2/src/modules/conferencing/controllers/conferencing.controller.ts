@@ -174,7 +174,10 @@ export class ConferencingController {
       return this.conferencingService.connectOauthApps(app, code, decodedCallbackState);
     } catch (error) {
       if (error instanceof HttpException || error instanceof Error) {
-        this.logger.error(error.message);
+        this.logger.error("Conferencing OAuth callback failed", {
+          errorType: error.name,
+          statusCode: error instanceof HttpException ? error.getStatus() : undefined,
+        });
       }
       return {
         url: decodedCallbackState.onErrorReturnTo ?? "",
