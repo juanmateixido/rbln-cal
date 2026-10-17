@@ -1,0 +1,61 @@
+name: RBLN quality
+on:
+  push:
+    branches: [rbln]
+    paths: ['deploy/**', 'scripts/rbln/**', 'rbln/wizard-juanma.sh', '.github/workflows/rbln-quality.yml']
+  workflow_dispatch:
+    inputs:
+      api_image:
+        description: 'Optional immutable API image for the full upstream type check'
+        required: false
+        type: string
+  workflow_run:
+    workflows: ['RBLN images']
+    types: [completed]
+permissions:
+  contents: read
+  packages: read
+jobs:
+  tooling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: |
+          python3 deploy/test-sync-vars.py
+          bash -n deploy/sync-vars.sh rbln/wizard-juanma.sh
+          rbln/wizard-juanma.sh --dry-run
+          for script in scripts/rbln/*.cjs; do node --check "$script"; done
+          npx --yes @biomejs/biome@2.3.10 check scripts/rbln --diagnostic-level=error
+      - name: Type check operational script without installing Cal
+        run: |
+          npm install --prefix "$RUNNER_TEMP/rbln-check" --no-audit --no-fund typescript@5.8.3 @types/node@22
+          node "$RUNNER_TEMP/rbln-check/node_modules/typescript/bin/tsc" \
+            -p scripts/rbln/tsconfig.json --typeRoots "$RUNNER_TEMP/rbln-check/node_modules/@types" \
+            --incremental --tsBuildInfoFile "$RUNNER_TEMP/rbln-check.tsbuildinfo"
+  upstream-types:
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name == 'workflow_dispatch' && inputs.api_image != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Full pinned-source type check in its built API image
+        env:
+          REQUESTED_IMAGE: ${{ inputs.api_image }}
+          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
+          RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+        run: |
+          set -euo pipefail
+          image=${REQUESTED_IMAGE:-ghcr.io/juanmateixido/rbln-cal-api:diy-54343aa-rbln.$RUN_NUMBER-$RUN_ATTEMPT}
+          case "$image" in ghcr.io/juanmateixido/rbln-cal-api:*) ;; ghcr.io/juanmateixido/rbln-cal-api@sha256:*) ;; *) exit 2 ;; esac
+          docker pull "$image"
+          docker run --rm -e NODE_OPTIONS=--max-old-space-size=6144 \
+            "$image" yarn type-check:ci --force --concurrency=1
