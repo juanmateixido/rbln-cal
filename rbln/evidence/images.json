@@ -1,0 +1,10 @@
+{
+  "revision": "a7e8cc3096665cefe10a36579d64fdbbbc28617b",
+  "api": "ghcr.io/juanmateixido/rbln-cal-api@sha256:c1156efdcec31eb8083ba0a0ccf6d062dc8d3d8b30c4978313f11a4202a1cb46",
+  "web": "ghcr.io/juanmateixido/rbln-cal-web@sha256:89dd2e30ae46600457db6f8cd97dd251929d3516d35bd3138f71c52e29c6591f",
+  "upstream_sha": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+  "verified_at": "2026-10-17T15:04:01.767503+00:00",
+  "workflow": "https://github.com/juanmateixido/rbln-cal/actions/runs/39042133944",
+  "verification": "Anonymous manifest, revision label, config/history policy and HEAD of every layer; CI performs docker pull",
+  "secrets_from_infisical_at_build": false
+}

@@ -126,14 +126,36 @@ No se siguió la redirección ni se creó credencial, usuario o sesión. Crudos 
 resultados locales excluidos: `local-only/conferencing-before*.json` y
 `local-only/stripe-before*.json`. Repetir después con los mismos marcadores.
 
-**Reproducción HTTP después del parche: PENDIENTE.** No sustituirla por tests.
-Enviar un bearer, body y query inventados a una ruta inexistente de la imagen sin parche;
-guardar el log con ese marcador visible en `rbln/evidence/local-only/`, excluido
-de Git. Registrar deployment/digest, hora UTC y resultado sanitizado aquí.
-Repetir con los mismos marcadores en la imagen parcheada: header `[REDACTED]`,
-body/query ausentes, identificador conservado. Ninguna credencial real en la prueba.
-Hasta completar ambos pasos y la revisión, no crear CAL_API_KEY_CRM ni abrir
-ninguna sesión de Giuliana. SMTP captura y BOOKING_MODE off permanecen vigentes.
+## Reproducción después del parche: VERDE
+
+17/10, 15:05:58 UTC. SHA `a7e8cc3096665cefe10a36579d64fdbbbc28617b`,
+API `ghcr.io/juanmateixido/rbln-cal-api@sha256:c1156efdcec31eb8083ba0a0ccf6d062dc8d3d8b30c4978313f11a4202a1cb46`,
+deployment `87c8ff67-6464-4588-80b0-68d50ba228ab` SUCCESS; `/health` **200**.
+[CI de imágenes](https://github.com/juanmateixido/rbln-cal/actions/runs/39042133944)
+verde para web y API, con build, controles de imagen pública, tests, smoke y pull.
+[Digests y acceso anónimo](images.json).
+
+| Probe con los mismos valores ficticios del ANTES | DESPUÉS |
+|---|---|
+| POST inexistente, Authorization + body + query | 404; encabezado `[REDACTED]`; los tres valores ausentes; requestId presente |
+| Conferencing callback | 301 al mismo fallback; evento fijo; descripción/token/code ausentes |
+| Stripe callback | 301 al mismo fallback; evento fijo; descripción/token/code ausentes |
+| safeParse compilado dentro de la imagen | Evento fijo + `invalid_type`; input ausente; fallback 0 comprobado |
+| Barrido de todos los logs del deployment | 62 registros, ventana no truncada, cero de los 9 marcadores |
+
+safeParse se invocó una vez como pre-deploy con un dato inventado; no fue un
+endpoint HTTP ni añadió una ruta. Su contraste contra el ancla está en tests;
+no hubo invocación runtime ANTES de ese helper. El comando de prueba se retiró
+después de verificarlo, sin reiniciar API. Los callbacks no siguieron el fallback.
+
+Resultados sanitizados: [privacy-after.json](privacy-after.json). Crudos solo
+bajo `local-only/`, excluidos de Git. No se usó ninguna credencial real en estos
+probes ni hubo sesión Giuli antes de completar esta comprobación.
+
+crm-foundation aprobó `RBLN /crm CAL_API_KEY` el 17/10, transmitido por el
+orquestador. La clave se creará por UI después de este gate, se guardará solo
+allí y se verificará un 4xx con ella: comparación exclusivamente en memoria,
+sin imprimirla ni guardar crudos de esa prueba. SMTP captura y BOOKING_MODE off.
 
 ## Servicio web
 

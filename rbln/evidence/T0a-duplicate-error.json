@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-17T15:14:33.651899+00:00",
+  "http": 400,
+  "response": {
+    "status": "error",
+    "path": "/v2/bookings",
+    "error": {
+      "code": "BadRequestException",
+      "message": "User either already has booking at this time or is not available",
+      "details": {
+        "message": "User either already has booking at this time or is not available",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "timestamp_present": true,
+  "different_synthetic_attendee": true,
+  "request_bodies_saved": false,
+  "cleanup_remaining": 0
+}

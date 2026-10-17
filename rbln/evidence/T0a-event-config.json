@@ -1,0 +1,21 @@
+{
+  "source": "GET /v2/event-types/1; cal-api-version 2024-06-14",
+  "event": {
+    "id": 1,
+    "hidden": true,
+    "bookingRequiresAuthentication": true,
+    "confirmationPolicy": {
+      "type": "always",
+      "blockUnconfirmedBookingsInBooker": true
+    },
+    "disableCancelling": {
+      "disabled": false
+    },
+    "disableRescheduling": {
+      "disabled": false
+    },
+    "scheduleId": 1,
+    "lengthInMinutes": 45,
+    "timeZone": null
+  }
+}

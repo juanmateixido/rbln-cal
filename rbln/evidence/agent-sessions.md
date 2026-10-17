@@ -11,5 +11,9 @@ Playwright nuevo sin `storageState` persistido. El cierre hace `POST signout`,
 comprueba que `GET session` no devuelve usuario, borra cookies y cierra el navegador.
 Un fallo de verificación impide dar la tarea por terminada.
 
-Preparado el 17/10/2026 antes del alta. Aún no hubo sesiones de Giuliana.
+El 17/10/2026 hubo tres sesiones entre 15:07 y 15:09 UTC: alta/perfil/API key,
+un intento del formulario de evento que terminó por selector incorrecto y
+la creación/configuración del único evento oculto. Las tres cerraron con
+logout verificado, cookies borradas y navegador cerrado, incluido el intento fallido.
+Ver el registro JSONL para los horarios y propósitos exactos.
 Las llamadas con la API key del CRM no crean una sesión web del usuario.

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-17T15:07:46.856203+00:00",
+  "deployment": "87c8ff67-6464-4588-80b0-68d50ba228ab",
+  "api_key_source": "RBLN /crm CAL_API_KEY",
+  "me_http": 200,
+  "intentional_error_http": 404,
+  "matching_event": true,
+  "key_in_logs": false,
+  "key_in_responses": false,
+  "header_redacted": true,
+  "request_id_present": true,
+  "untruncated": true,
+  "raw_logs_saved": false,
+  "session_used": false,
+  "pass": true
+}

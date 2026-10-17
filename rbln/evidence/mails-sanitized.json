@@ -1,0 +1,60 @@
+{
+  "utc": "2026-10-17T15:12:34.684745+00:00",
+  "source": "SMTP capture only; no delivery",
+  "raw_mime_saved": false,
+  "count": 3,
+  "mails": [
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Rechazado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] en 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nSu solicitud de reunión ha sido rechazada\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    }
+  ]
+}

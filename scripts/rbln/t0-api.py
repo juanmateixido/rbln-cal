@@ -73,13 +73,18 @@ def booking_body(start):
             "metadata": {"rblnTest": "T0a", "synthetic": "true"}}
 
 
-def create(start, auth=True):
-    code, payload = request("/bookings", "POST", booking_body(start), auth=auth)
+def create(start, auth=True, duplicate=False):
+    body = booking_body(start)
+    if duplicate:
+        body["attendee"].update(name="Otro ensayo T0", email="cal-t0-second@example.invalid")
+    code, payload = request("/bookings", "POST", body, auth=auth)
     data = payload.get("data", {})
     if isinstance(data, dict) and data.get("uid"):
         OPEN.add(data["uid"])
         USED.add(data["uid"])
-    return code, data
+    error_code = payload.get("error", {}).get("code")
+    safe_code = error_code if isinstance(error_code, str) and re.fullmatch(r"[A-Za-z_]{1,80}", error_code) else None
+    return code, data, safe_code
 
 
 def capture():
@@ -98,24 +103,34 @@ def main():
     config = event.get("data", {})
     record("hidden_authenticated_event", code == 200 and config.get("hidden") is True and
            config.get("bookingRequiresAuthentication") is True, http=code, event_type_id=EVENT)
+    policy = config.get("confirmationPolicy", {})
+    record("confirmation_blocks_unconfirmed", policy.get("type") == "always" and
+           policy.get("blockUnconfirmedBookingsInBooker") is True, policy=policy)
     available = slots()
     record("slots_available", len(available) >= 3, count=len(available))
     first = available[0]
     second = next(slot for slot in available if slot >= first + timedelta(hours=2))
-    code, _ = create(first, auth=False)
+    code, _, _ = create(first, auth=False)
     record("anonymous_rejected", code in (401, 403), http=code)
-    code, booking = create(first)
+    code, booking, _ = create(first)
     record("pending_created", code in (200, 201) and booking.get("status") == "pending", http=code,
            state=booking.get("status"))
     uid = booking["uid"]
     record("uid_format", isinstance(uid, str) and bool(uid), length=len(uid),
            uuid=bool(re.fullmatch(r"[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}", uid)),
            alphanumeric=uid.isalnum(), sha256=hashlib.sha256(uid.encode()).hexdigest())
-    record("pending_blocks_slot", first not in slots())
-    code, duplicate = create(first)
-    record("duplicate_blocked", code in (400, 409, 422) and not duplicate.get("uid"), http=code)
+    immediate_visible = first in slots()
+    RESULTS["pending_slot_immediate"] = {"status": "OBSERVED", "visible": immediate_visible,
+                                         "cache_default_ms": 2000}
+    time.sleep(3.2)
+    record("pending_blocks_slot_after_cache", first not in slots(), waited_seconds=3.2)
+    code, duplicate, error_code = create(first, duplicate=True)
+    record("duplicate_blocked", code in (400, 409, 422) and not duplicate.get("uid"), http=code,
+           error_code=error_code, different_synthetic_attendee=True)
     code, confirmed = request(f"/bookings/{uid}/confirm", "POST", {})
     record("confirm", code in (200, 201) and confirmed.get("data", {}).get("status") == "accepted", http=code)
+    code, state = request(f"/bookings/{uid}")
+    record("confirm_readback", code == 200 and state.get("data", {}).get("status") == "accepted", http=code)
     before_repeat = len(capture()["webhooks"])
     repeat_code, _ = request(f"/bookings/{uid}/confirm", "POST", {})
     code, state = request(f"/bookings/{uid}")
@@ -134,12 +149,13 @@ def main():
     code, cancelled = request(f"/bookings/{moved['uid']}/cancel", "POST", {"cancellationReason": "Ensayo T0"})
     record("cancel", code in (200, 201) and cancelled.get("data", {}).get("status") == "cancelled", http=code)
     OPEN.discard(moved["uid"])
-    code, pending = create(first)
+    code, pending, _ = create(first)
     record("new_pending", code in (200, 201) and pending.get("status") == "pending", http=code)
     code, declined = request(f"/bookings/{pending['uid']}/decline", "POST", {"reason": "Ensayo T0"})
     record("decline", code in (200, 201) and declined.get("data", {}).get("status") == "rejected", http=code)
     OPEN.discard(pending["uid"])
-    record("decline_releases_slot", first in slots())
+    time.sleep(3.2)
+    record("decline_releases_slot", first in slots(), waited_seconds=3.2)
     expected = {"BOOKING_REQUESTED", "BOOKING_CREATED", "BOOKING_RESCHEDULED", "BOOKING_CANCELLED", "BOOKING_REJECTED"}
     for attempt in range(15):
         received = capture()

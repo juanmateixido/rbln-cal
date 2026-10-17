@@ -1,0 +1,61 @@
+{
+  "utc": "2026-10-17T15:05:58.013632+00:00",
+  "revision": "a7e8cc3096665cefe10a36579d64fdbbbc28617b",
+  "image": "ghcr.io/juanmateixido/rbln-cal-api@sha256:c1156efdcec31eb8083ba0a0ccf6d062dc8d3d8b30c4978313f11a4202a1cb46",
+  "deployment": "87c8ff67-6464-4588-80b0-68d50ba228ab",
+  "deployment_status": "SUCCESS",
+  "health": 200,
+  "runtime_log_entries": 62,
+  "untruncated": true,
+  "marker_count": 0,
+  "header_redacted": true,
+  "request_id_present": true,
+  "conferencing_event": true,
+  "stripe_event": true,
+  "safe_parse_event": true,
+  "safe_parse_codes": true,
+  "safe_parse_completed": true,
+  "safe_parse_scope": "one-time pre-deploy invocation of compiled helper in the same image; no HTTP endpoint added",
+  "raw_log_committed": false,
+  "http_gate_pass": true,
+  "safe_parse_pass": true,
+  "probes": [
+    {
+      "phase": "after",
+      "utc": "2026-10-17T15:05:34.722490+00:00",
+      "status": 404,
+      "deployment": "87c8ff67-6464-4588-80b0-68d50ba228ab",
+      "image": "ghcr.io/juanmateixido/rbln-cal-api@sha256:c1156efdcec31eb8083ba0a0ccf6d062dc8d3d8b30c4978313f11a4202a1cb46",
+      "marker_header_visible": false,
+      "marker_body_visible": false,
+      "marker_query_visible": false,
+      "redaction_visible": true,
+      "request_id_present": true,
+      "raw_log_committed": false
+    },
+    {
+      "phase": "after",
+      "kind": "conferencing",
+      "utc": "2026-10-17T15:05:44.666852+00:00",
+      "deployment": "87c8ff67-6464-4588-80b0-68d50ba228ab",
+      "http": 301,
+      "expected_redirect": true,
+      "description_visible": false,
+      "fixed_event_present": true,
+      "logs_found": 1,
+      "raw_log_committed": false
+    },
+    {
+      "phase": "after",
+      "kind": "stripe",
+      "utc": "2026-10-17T15:05:48.944132+00:00",
+      "deployment": "87c8ff67-6464-4588-80b0-68d50ba228ab",
+      "http": 301,
+      "expected_redirect": true,
+      "description_visible": false,
+      "fixed_event_present": true,
+      "logs_found": 1,
+      "raw_log_committed": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-17T15:09:32.602012+00:00",
+  "upstream_sha": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+  "checks": {
+    "api_key": {
+      "status": "PASS",
+      "http": 200
+    },
+    "hidden_authenticated_event": {
+      "status": "PASS",
+      "http": 200,
+      "event_type_id": 1
+    },
+    "slots_available": {
+      "status": "PASS",
+      "count": 90
+    },
+    "anonymous_rejected": {
+      "status": "PASS",
+      "http": 401
+    },
+    "pending_created": {
+      "status": "PASS",
+      "http": 201,
+      "state": "pending"
+    },
+    "uid_format": {
+      "status": "PASS",
+      "length": 22,
+      "uuid": false,
+      "alphanumeric": true,
+      "sha256": "fdd3a623fc8351aa6b1d209bfa8b86d08fbb67741ab56ea008eec6589d85cfd4"
+    },
+    "pending_blocks_slot": {
+      "status": "FAIL"
+    },
+    "stopped": {
+      "status": "FAIL",
+      "reason": "pending_blocks_slot failed; stop this branch and report before changing the plan"
+    },
+    "cleanup": {
+      "status": "PASS",
+      "remaining": 0
+    }
+  }
+}

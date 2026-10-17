@@ -104,6 +104,9 @@ carga directamente en `RBLN /crm` solo después de la aprobación de crm-foundat
 Hasta ese OK no se crea la clave. El script exige `CAL_CRM_KEY_APPROVED=yes`
 como constancia operativa de esa aprobación; no sustituye al mensaje del responsable.
 No se imprime ni se guarda en un archivo ni se duplica en `/cal`.
+Foundation aprobó el nombre el 17/10: la clave fue creada por UI y cargada en
+esa ruta a las 15:07 UTC, después del gate DESPUÉS. `/me` 200 y un 404 deliberado
+verificaron su funcionamiento y ausencia en logs/respuestas, sin guardar crudos.
 El perfil se configura por tRPC y el resto por API v2 con
 [configure.ts](../scripts/rbln/configure.ts). Correrlo dos veces y comparar el
 mapa de 10 eventos antes de dar P-05 por aprobado.
@@ -148,6 +151,12 @@ UID, confirm repetido, memoria/arranque. Cada rojo incluye el árbol de decisió
 para bridge en [T0.md](../rbln/evidence/T0.md). No usar endpoints del CRM para
 recibir pruebas.
 
+En P-05, fijar explícitamente `confirmationPolicy: { type: "always",
+blockUnconfirmedBookingsInBooker: true }`. La API comparte una caché de slots
+de 2.000 ms por input exacto; una lectura inmediata tras una mutación puede ser
+anterior a ella. T0a comprueba por separado la lectura tras más de 3 s y el
+rechazo de un segundo POST con otro asistente. No se cambió `SLOTS_CACHE_TTL`.
+
 T0b revisa el español efectivo, branding y MIME/ICS capturados. El enlace
 `/booking/{uid}?changes=true` que sigue en texto/ICS se acepta como cosmético
 solo si ambos flags impiden cancelar/reprogramar de verdad. Si permite hacerlo,
@@ -157,7 +166,8 @@ solicitudes desde el mail: el puente registra/alerta `confirmed_unpaid` si ocurr
 
 `RBLN /crm` pertenece a crm-foundation. Los cuatro nombres cargados inicialmente
 (`CAL_API_URL`, `CAL_WEBHOOK_SECRET`, `BOOKING_MODE`, `BOOKING_TEST_TO`) están
-pendientes de su aprobación. `CAL_API_KEY` no se crea sin ese OK y luego se guarda directamente allí,
+pendientes de la confirmación documental de su aprobación. `CAL_API_KEY` sí recibió el OK
+explícito y ya se guarda directamente allí,
 sin el fallback anterior `/cal CAL_API_KEY_CRM` (nunca llegó a crearse). Comunicar solo nombres/rutas al
 catálogo de secrets-vault, con copia a ambos orquestadores.
 
