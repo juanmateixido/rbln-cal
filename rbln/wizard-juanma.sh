@@ -199,7 +199,7 @@ case "${1:---dry-run}" in
   --dry-run)
     printf '%s\n' \
       'SECO: no abre navegador, no lee secretos, no despliega y no envía correos.' \
-      'PREVIO, --images sha-<commit>: Juanma hace públicos ambos paquetes GHCR; verifica acceso anónimo a manifest/config/todas las capas.' \
+      'OPCIONAL, --images sha-<commit>: comprueba pull anónimo; solo pide a Juanma cambiar visibilidad si un paquete sigue privado.' \
       '   No requiere Giuli, no activa SMTP ni solicita token. Todo sigue en captura y BOOKING_MODE off.' \
       '1. Juanma: autorizar/publicar OAuth Google; ID y secret a RBLN /cal GOOGLE_API_CREDENTIALS.' \
       '   Automático en GO: sync a rbln-cal, SMTP Mailgun y dominio canónico; esperar deployments sanos.' \
