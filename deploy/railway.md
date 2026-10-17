@@ -14,7 +14,7 @@ Entorno `production`: `3082cdf3-2bfe-4ab5-9f6c-d56bbac68ad8`.
 |---|---|---|
 | `postgres` | `postgres:16-alpine`, DB `calendso` | volumen `/var/lib/postgresql/data`; `PGDATA` subdirectorio `pgdata`; backups DAILY/WEEKLY/MONTHLY habilitados |
 | `redis` | `redis:7-alpine`, autenticación obligatoria, AOF | volumen `/data`; solo red privada |
-| `cal-web` | `ghcr.io/juanmateixido/rbln-cal-web` | puerto 3000; `/auth/login` |
+| `cal-web` | `ghcr.io/juanmateixido/rbln-cal-web` | puerto 3000; salud `/api/auth/csrf`; UI `/auth/login` |
 | `cal-api` | `ghcr.io/juanmateixido/rbln-cal-api` | puerto 5555; **`/health` sin `/v2`** |
 | `t0-sink` | `python:3.11-alpine`, [receptor](t0-sink.py) | HTTP 8080 `/health`; SMTP privado 1025; memoria, sin disco ni envíos |
 

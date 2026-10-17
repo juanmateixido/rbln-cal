@@ -33,7 +33,7 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_DB: calendso
         ports: ['5432:5432']
-        options: --health-cmd pg_isready --health-interval 5s --health-retries 20
+        options: --health-cmd "pg_isready -U postgres" --health-interval 5s --health-retries 20
       redis:
         image: redis:7-alpine
         ports: ['6379:6379']
@@ -95,7 +95,7 @@ jobs:
             -e CALCOM_TELEMETRY_DISABLED=1 -e ENABLE_ASYNC_TASKER=0 \
             "$IMAGE:$TAG"
           for attempt in $(seq 1 90); do
-            status=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:$HTTP_PORT$HEALTH" || true)
+            status=$(curl -s -L --max-redirs 3 --max-time 10 -o /dev/null -w '%{http_code}' "http://127.0.0.1:$HTTP_PORT$HEALTH" || true)
             if [ "$status" = 200 ]; then exit 0; fi
             sleep 5
           done
