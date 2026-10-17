@@ -32,7 +32,7 @@ excepción de los logs de error. Estos últimos también pueden repetir la query
 request; las respuestas HTTP mantienen sus códigos y mensajes. Tampoco registra
 el correo del usuario. `x-cal-client-id` queda fuera de la allowlist.
 
-P-02 añade únicamente `cancellation_reason_optional_label` a
+I18N-01 añade únicamente `cancellation_reason_optional_label` a
 `packages/i18n/locales/es/common.json`: T0b mostró el fallback inglés en el
 formulario de cancelación con usuario e interfaz en español. Preservar la clave.
 

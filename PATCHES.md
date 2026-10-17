@@ -69,7 +69,7 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   y entorno final; `.dockerignore` excluye configuración local. La CI no lee
   Infisical y publica exclusivamente con `GITHUB_TOKEN`, sin sobrescribir tags SHA.
 
-P-02 — traducción mínima de `cancellation_reason_optional_label` en
+I18N-01 — traducción mínima de `cancellation_reason_optional_label` en
 `packages/i18n/locales/es/common.json`, tras observar el fallback inglés real en
 el formulario de cancelación (T0b-ui.json). Preservar esta clave en el sync.
 No cambia lógica, correos ni ICS.
