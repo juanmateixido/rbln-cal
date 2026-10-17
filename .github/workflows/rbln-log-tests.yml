@@ -97,7 +97,7 @@ jobs:
           temp=pathlib.Path(os.environ['RUNNER_TEMP'])
           config={'extends':'/calcom/apps/api/v2/tsconfig.json',
             'compilerOptions':{'noEmit':True,'incremental':True,'tsBuildInfoFile':'/tmp/privacy.tsbuildinfo'},
-            'include':['/calcom/'+p for p in (temp/'type-files').read_text().splitlines()],
+            'include':['/calcom/packages/types/*.d.ts']+['/calcom/'+p for p in (temp/'type-files').read_text().splitlines()],
             'exclude':['node_modules','dist']}
           (temp/'privacy-tsconfig.json').write_text(json.dumps(config))
           PY
