@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-17T15:58:53.791Z",
+  "bookings_created": 0,
+  "booking_posts_blocked": 0,
+  "events": [
+    {
+      "id": 3,
+      "modality": "presencial",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 4,
+      "modality": "presencial",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 5,
+      "modality": "presencial",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 6,
+      "modality": "presencial",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 7,
+      "modality": "online",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 8,
+      "modality": "online",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 9,
+      "modality": "online",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 10,
+      "modality": "online",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Este campo es requerido."
+    },
+    {
+      "id": 11,
+      "modality": "online",
+      "visible": true,
+      "disabled": false,
+      "empty_error_visible": true,
+      "empty_error": "Número de teléfono no válido"
+    }
+  ],
+  "pass": true
+}

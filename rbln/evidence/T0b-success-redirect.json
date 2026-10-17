@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-17T15:53:16.078Z",
+  "event_type_id": 2,
+  "crm_requests_sent": 0,
+  "field_names": [
+    {
+      "name": "name",
+      "type": "text",
+      "id": "_r_2r_"
+    },
+    {
+      "name": "email",
+      "type": "email",
+      "id": "email"
+    },
+    {
+      "name": "attendeePhoneNumber",
+      "type": "tel",
+      "id": ""
+    },
+    {
+      "name": "",
+      "type": "text",
+      "id": "react-select-2-input"
+    },
+    {
+      "name": "motivo",
+      "type": "hidden",
+      "id": ""
+    },
+    {
+      "name": "consentimiento",
+      "type": "checkbox",
+      "id": "radix-_r_2u_"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "id": "title"
+    },
+    {
+      "name": "notes",
+      "type": "textarea",
+      "id": "notes"
+    }
+  ],
+  "phone_control": {
+    "disabled": false,
+    "readOnly": false,
+    "hidden": false,
+    "display": "inline-block",
+    "width": 369,
+    "height": 35,
+    "tabIndex": 0,
+    "required": false
+  },
+  "empty_phone_error_visible": true,
+  "empty_phone_error": "Este campo es requerido.",
+  "phone_visible_and_required": true,
+  "phone_matches_fixture": true,
+  "booking_http": 200,
+  "uid_sha256": "de9759993f24e2622e772f2cfcdfad9b62ea561c2f7725a714ec53ac4d0dbf88",
+  "redirect_intercepted": true,
+  "target_origin": "https://crm.rebelion.training",
+  "target_path": "/agenda/pago",
+  "query_keys": [
+    "attendeeName",
+    "attendeeStartTime",
+    "description",
+    "email",
+    "endTime",
+    "eventTypeSlug",
+    "hostName",
+    "hostStartTime",
+    "isEmbed",
+    "isSuccessBookingPage",
+    "location",
+    "startTime",
+    "title",
+    "type",
+    "uid",
+    "user"
+  ],
+  "uid_forwarded": true,
+  "query_contains_synthetic_name": true,
+  "query_contains_synthetic_email": true,
+  "cleanup_remaining": 0
+}

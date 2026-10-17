@@ -152,7 +152,7 @@ async function main() {
         bookingFields: [
           { type: "name", label: "Nombre y apellido" },
           { type: "email", label: "Correo electrónico", required: true },
-          { type: "phone", slug: "attendeePhoneNumber", label: "WhatsApp", required: true },
+          { type: "phone", slug: "attendeePhoneNumber", label: "WhatsApp", required: true, hidden: false },
           {
             type: "select",
             slug: "motivo",

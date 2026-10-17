@@ -80,6 +80,13 @@ un fallo reproducible de T0 y una entrada en este archivo.
 
 ## Configuración P-05, sin parche funcional
 
+El campo `attendeePhoneNumber` requiere `hidden:false` explícito además de
+`required:true`. GET v2 convierte undefined a false, mientras que el booker
+aplica el default hidden:true si la propiedad no se guardó. Corrección limitada
+a bookingFields de los diez tipos existentes; no cambia código de Cal.
+La aceptación requiere observar el campo y su error de requerido en la UI,
+además del readback y de la segunda corrida idempotente.
+
 T0b verificó que `disableCancelling=true` bloquea tanto al asistente como al
 panel de Giuli y la API; `disableRescheduling=true` bloquea enlace y panel,
 aunque la API permite reprogramar. Ambos quedan en **false**, por decisión del

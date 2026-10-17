@@ -1,0 +1,197 @@
+{
+  "at": "2026-10-17T15:48:54.849071+00:00",
+  "mutation_scope": "bookingFields only, preserving current fields; attendeePhoneNumber required:true hidden:false explicit",
+  "runs": [
+    {
+      "run": 1,
+      "events": [
+        {
+          "id": 2,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "5f7dcac8513f530580af5c023b053df809a817f1d6d283bb122a260f35743876"
+        },
+        {
+          "id": 3,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "c57ba3890abec88ecfe2ff30914d9f4248053b1325f06f4342ad8dfd9dc9d5f2"
+        },
+        {
+          "id": 4,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "b87e37eed441db7068acc0078481e602578db22eccfee5891534937924580c34"
+        },
+        {
+          "id": 5,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "0cda36f3b2eaca2b1bfffadc07fb9c2db849b70390c6d50e68cf3654a149f503"
+        },
+        {
+          "id": 6,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "8c4faaf1f2656a4d5856b25f209f4a717eb2c4839e7b832dfe16631a820a27be"
+        },
+        {
+          "id": 7,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "3231523d8b5c5b40f3edf0e733170ea176fb17be0d09f5f5408e368b0204730e"
+        },
+        {
+          "id": 8,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "b5b99c52a51774b07af23e1fbf395161c9568055f2d47bff6ebaa1425e6b0d9a"
+        },
+        {
+          "id": 9,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "bb861c04deeb623cf7046bd3717e4293e0b5614977b52f083691c557022ddf86"
+        },
+        {
+          "id": 10,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "da16de78644c160a945aa0b1945001fb79bcd3dfbeaeb5661acc01a53890e4f0"
+        },
+        {
+          "id": 11,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "e40f401356da649e3f7b3d00ff7b0d657a441887f39be6f6546a647ebfab3716"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "events": [
+        {
+          "id": 2,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "5f7dcac8513f530580af5c023b053df809a817f1d6d283bb122a260f35743876"
+        },
+        {
+          "id": 3,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "c57ba3890abec88ecfe2ff30914d9f4248053b1325f06f4342ad8dfd9dc9d5f2"
+        },
+        {
+          "id": 4,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "b87e37eed441db7068acc0078481e602578db22eccfee5891534937924580c34"
+        },
+        {
+          "id": 5,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "0cda36f3b2eaca2b1bfffadc07fb9c2db849b70390c6d50e68cf3654a149f503"
+        },
+        {
+          "id": 6,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "8c4faaf1f2656a4d5856b25f209f4a717eb2c4839e7b832dfe16631a820a27be"
+        },
+        {
+          "id": 7,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "3231523d8b5c5b40f3edf0e733170ea176fb17be0d09f5f5408e368b0204730e"
+        },
+        {
+          "id": 8,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "b5b99c52a51774b07af23e1fbf395161c9568055f2d47bff6ebaa1425e6b0d9a"
+        },
+        {
+          "id": 9,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "bb861c04deeb623cf7046bd3717e4293e0b5614977b52f083691c557022ddf86"
+        },
+        {
+          "id": 10,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "da16de78644c160a945aa0b1945001fb79bcd3dfbeaeb5661acc01a53890e4f0"
+        },
+        {
+          "id": 11,
+          "phone_required": true,
+          "api_hidden": false,
+          "other_configuration_unchanged": true,
+          "unexpected_changed_fields": [],
+          "readback_sha256": "e40f401356da649e3f7b3d00ff7b0d657a441887f39be6f6546a647ebfab3716"
+        }
+      ]
+    }
+  ],
+  "second_run_idempotent": true,
+  "before_ui": {
+    "at": "2026-10-17T15:45:44.367Z",
+    "event_type_id": 2,
+    "ancestor_class": "mb-4 hidden",
+    "phone_width": 0,
+    "phone_height": 0,
+    "api_readback_hidden": false,
+    "note": "API default false did not prove booker visibility when the persisted field omitted hidden"
+  },
+  "after_ui": {
+    "at": "2026-10-17T15:51:11.641Z",
+    "event_type_id": 2,
+    "phone_width": 369,
+    "phone_height": 35,
+    "empty_phone_error_visible": true,
+    "empty_phone_error": "Este campo es requerido.",
+    "empty_phone_post_prevented": true,
+    "native_required_attribute": false,
+    "validation": "Application form validation; empty field shows required error before any booking POST"
+  }
+}
