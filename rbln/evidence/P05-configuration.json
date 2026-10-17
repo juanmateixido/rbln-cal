@@ -1,0 +1,1279 @@
+{
+  "utc": "2026-10-17T15:21:08.195196+00:00",
+  "idempotent_map_identical": true,
+  "readback": [
+    {
+      "id": 2,
+      "slug": "nutri-consulta-general-inicial-presencial",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "address",
+          "address": "Koru",
+          "public": true
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 2,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 3,
+      "slug": "nutri-control-general-presencial",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "address",
+          "address": "Koru",
+          "public": true
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 2,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 4,
+      "slug": "nutri-asesoria-deportiva-inicial-presencial",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "address",
+          "address": "Koru",
+          "public": true
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 2,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 5,
+      "slug": "nutri-seguimiento-deportivo-presencial",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "address",
+          "address": "Koru",
+          "public": true
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 2,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 6,
+      "slug": "fuel-consulta-presencial",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "address",
+          "address": "Koru",
+          "public": true
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 2,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 7,
+      "slug": "nutri-consulta-general-inicial-online",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "attendeeDefined"
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 3,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 8,
+      "slug": "nutri-control-general-online",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "attendeeDefined"
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 3,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 9,
+      "slug": "nutri-asesoria-deportiva-inicial-online",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "attendeeDefined"
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 3,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 10,
+      "slug": "nutri-seguimiento-deportivo-online",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "attendeeDefined"
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 3,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    },
+    {
+      "id": 11,
+      "slug": "fuel-consulta-online",
+      "hidden": true,
+      "bookingRequiresAuthentication": true,
+      "interfaceLanguage": "es",
+      "confirmationPolicy": {
+        "type": "always",
+        "blockUnconfirmedBookingsInBooker": true
+      },
+      "locations": [
+        {
+          "type": "attendeeDefined"
+        }
+      ],
+      "bookingFields": [
+        {
+          "isDefault": true,
+          "type": "name",
+          "slug": "name",
+          "required": true,
+          "label": "Nombre y apellido",
+          "disableOnPrefill": false
+        },
+        {
+          "isDefault": true,
+          "type": "email",
+          "slug": "email",
+          "required": true,
+          "label": "Correo electrónico",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "radioInput",
+          "slug": "location",
+          "required": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "phone",
+          "slug": "attendeePhoneNumber",
+          "required": true,
+          "label": "WhatsApp",
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "select",
+          "slug": "motivo",
+          "label": "Motivo",
+          "required": true,
+          "disableOnPrefill": false,
+          "options": [
+            "consulta general",
+            "deportiva / carrera",
+            "control",
+            "otro"
+          ],
+          "hidden": false
+        },
+        {
+          "isDefault": false,
+          "type": "boolean",
+          "slug": "consentimiento",
+          "label": "Entiendo que el turno se confirma con el pago y acepto la política de cambios",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "text",
+          "slug": "title",
+          "required": true,
+          "disableOnPrefill": false,
+          "hidden": true
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "notes",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "multiemail",
+          "slug": "guests",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        },
+        {
+          "isDefault": true,
+          "type": "textarea",
+          "slug": "rescheduleReason",
+          "required": false,
+          "disableOnPrefill": false,
+          "hidden": false
+        }
+      ],
+      "disableCancelling": {
+        "disabled": false
+      },
+      "disableRescheduling": {
+        "disabled": false
+      },
+      "scheduleId": 3,
+      "lengthInMinutes": 45,
+      "afterEventBuffer": 15,
+      "slotInterval": 60,
+      "minimumBookingNotice": 180,
+      "bookingWindow": {
+        "type": "calendarDays",
+        "value": 60,
+        "rolling": true
+      },
+      "successRedirectUrl": "https://crm.rebelion.training/agenda/pago"
+    }
+  ],
+  "slots": [
+    {
+      "modality": "presencial",
+      "date": "2026-10-19",
+      "count": 0
+    },
+    {
+      "modality": "presencial",
+      "date": "2026-10-20",
+      "count": 10
+    },
+    {
+      "modality": "online",
+      "date": "2026-10-19",
+      "count": 10
+    },
+    {
+      "modality": "online",
+      "date": "2026-10-20",
+      "count": 0
+    }
+  ],
+  "online_bookings_created": 0
+}

@@ -1,0 +1,6 @@
+{
+  "http": 400,
+  "code": "BadRequestException",
+  "message": "'locations' must contain at least 1 location.",
+  "locations": []
+}

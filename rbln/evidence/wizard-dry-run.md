@@ -1,6 +1,6 @@
 # Wizard de GO · ejecución en seco
 
-17/10/2026, 15:02 UTC. `bash rbln/wizard-juanma.sh --dry-run`: exit 0.
+17/10/2026, repetido 15:20 UTC. `bash rbln/wizard-juanma.sh --dry-run`: exit 0.
 No navegador, lectura de secretos, despliegue, reset ni correo. También pasa
 `bash -n`. El modo real queda reservado al GO con Juanma y Giuliana presentes.
 
@@ -13,7 +13,15 @@ Etapas mostradas:
    inicial y cierre de sesión; evidencia para la baja posterior por
    secrets-vault conforme T14e.
 3. Giuli conecta Google, elige `Pacientes` y el script comprueba destino y
-   calendarios de conflictos por API.
+   calendarios de conflictos por API. Después hace PATCH de los cinco IDs online
+   estables y exige con GET que cada uno tenga **una sola ubicación Google Meet**,
+   sin `attendeeDefined`. Conserva ocultación/autenticación y solo entonces marca
+   `meet_pending: false` en el mapa.
+
+La prueba seca ejecuta tres regresiones con un doble en memoria, sin red:
+conservación de cinco IDs y readback completo; PATCH exitoso pero ubicación
+provisional persistente falla; pérdida de ocultación falla antes de mutar.
+Resultado 3/3. No equivale a conexión OAuth ni migración Meet real.
 
 El modo opcional `--images sha-<commit>` comprueba primero el pull anónimo y
 solo pide cambiar visibilidad si hace falta. No requiere token de paquetes ni

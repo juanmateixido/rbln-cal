@@ -1,8 +1,8 @@
 {
-  "utc": "2026-10-17T15:12:34.684745+00:00",
+  "utc": "2026-10-17T15:22:10.862192+00:00",
   "source": "SMTP capture only; no delivery",
   "raw_mime_saved": false,
-  "count": 3,
+  "count": 70,
   "mails": [
     {
       "role": "asistente",
@@ -50,6 +50,2081 @@
       ],
       "calendar": [],
       "text_excerpt": "\nSu solicitud de reunión ha sido rechazada\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "fa3124fcbe917b4ed4e6026cdb208dfb73a56af6423993ee1a9ba50b401f65c9",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "fa3124fcbe917b4ed4e6026cdb208dfb73a56af6423993ee1a9ba50b401f65c9",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "fa3124fcbe917b4ed4e6026cdb208dfb73a56af6423993ee1a9ba50b401f65c9",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "fa3124fcbe917b4ed4e6026cdb208dfb73a56af6423993ee1a9ba50b401f65c9",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] ha sido reprogramado para el 12:00 - 12:45, lunes, octubre 19, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "37c2eb1d10cf2d03f6a1d6a4a502ec10a956056eec8ca405e94debc96c10aa60",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "37c2eb1d10cf2d03f6a1d6a4a502ec10a956056eec8ca405e94debc96c10aa60",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] ha sido reprogramado para el 12:00 - 12:45, lunes, octubre 19, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "37c2eb1d10cf2d03f6a1d6a4a502ec10a956056eec8ca405e94debc96c10aa60",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "37c2eb1d10cf2d03f6a1d6a4a502ec10a956056eec8ca405e94debc96c10aa60",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nEstado de las aplicaciones\n      \n    \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 12:00 - 12:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3df62ec7ecfa6350d9343e0358a469ce8962bd08ad7888cbae31d1608152b09b",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3df62ec7ecfa6350d9343e0358a469ce8962bd08ad7888cbae31d1608152b09b",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nrescheduledReason:\n[ASISTENTE DE ENSAYO]\n  \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 12:00 - 12:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3df62ec7ecfa6350d9343e0358a469ce8962bd08ad7888cbae31d1608152b09b",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3df62ec7ecfa6350d9343e0358a469ce8962bd08ad7888cbae31d1608152b09b",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nrescheduledReason:\n[ASISTENTE DE ENSAYO]\n  \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Rechazado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] en 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nSu solicitud de reunión ha sido rechazada\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Rechazado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] en 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nSu solicitud de reunión ha sido rechazada\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, martes, octubre 20, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3a79eca29e02b2ac5dc379dda618cb66c7b40e1b76a33f30b0e4a3755f5ec739",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3a79eca29e02b2ac5dc379dda618cb66c7b40e1b76a33f30b0e4a3755f5ec739",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3a79eca29e02b2ac5dc379dda618cb66c7b40e1b76a33f30b0e4a3755f5ec739",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3a79eca29e02b2ac5dc379dda618cb66c7b40e1b76a33f30b0e4a3755f5ec739",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, martes, octubre 20, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2e74d4bfc044770e590ae688c7ab03bd18f38c9dd5a9d0a503303d614e247f09",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2e74d4bfc044770e590ae688c7ab03bd18f38c9dd5a9d0a503303d614e247f09",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, martes, octubre 20, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2e74d4bfc044770e590ae688c7ab03bd18f38c9dd5a9d0a503303d614e247f09",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2e74d4bfc044770e590ae688c7ab03bd18f38c9dd5a9d0a503303d614e247f09",
+          "DTSTART": "20261020T130000Z",
+          "DTEND": "20261020T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "09689f2b06290e01328cc071fb411efc560cbd82eb2c3912254976441daa8844",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "09689f2b06290e01328cc071fb411efc560cbd82eb2c3912254976441daa8844",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "09689f2b06290e01328cc071fb411efc560cbd82eb2c3912254976441daa8844",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "09689f2b06290e01328cc071fb411efc560cbd82eb2c3912254976441daa8844",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3f0234bea21343c956479797e9173e6cacd698e689e1fdb60255c4796344fcfc",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3f0234bea21343c956479797e9173e6cacd698e689e1fdb60255c4796344fcfc",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3f0234bea21343c956479797e9173e6cacd698e689e1fdb60255c4796344fcfc",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "3f0234bea21343c956479797e9173e6cacd698e689e1fdb60255c4796344fcfc",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "9cc59a055aae1fabd99361b63158c9b963de1f4f538d0ea06988e99e427291d4",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "9cc59a055aae1fabd99361b63158c9b963de1f4f538d0ea06988e99e427291d4",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "9cc59a055aae1fabd99361b63158c9b963de1f4f538d0ea06988e99e427291d4",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "9cc59a055aae1fabd99361b63158c9b963de1f4f538d0ea06988e99e427291d4",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] ha sido reprogramado para el 12:00 - 12:45, lunes, octubre 19, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "54b1081fe38c559bfe680d87221b4a80a2235e5cbc9fd3637dbca33eb21db85e",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "54b1081fe38c559bfe680d87221b4a80a2235e5cbc9fd3637dbca33eb21db85e",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nEstado de las aplicaciones\n      \n    \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] ha sido reprogramado para el 12:00 - 12:45, lunes, octubre 19, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "54b1081fe38c559bfe680d87221b4a80a2235e5cbc9fd3637dbca33eb21db85e",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "54b1081fe38c559bfe680d87221b4a80a2235e5cbc9fd3637dbca33eb21db85e",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 12:00 - 12:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "987d59cdbc0b3787563c7652e488662bc6db9da808f8fa651dcd1b5ef1358fae",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "987d59cdbc0b3787563c7652e488662bc6db9da808f8fa651dcd1b5ef1358fae",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nrescheduledReason:\n[ASISTENTE DE ENSAYO]b\n  \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] el 12:00 - 12:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "987d59cdbc0b3787563c7652e488662bc6db9da808f8fa651dcd1b5ef1358fae",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "987d59cdbc0b3787563c7652e488662bc6db9da808f8fa651dcd1b5ef1358fae",
+          "DTSTART": "20261019T150000Z",
+          "DTEND": "20261019T154500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO] entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]\n[EMAIL]\n\nDonde:\nKoru\n\nrescheduledReason:\n[ASISTENTE DE ENSAYO]b\n  \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "c628e61aa89e48912a59c5eaf6e39d31082a82d9816984047bc27ff7186e569d",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "c628e61aa89e48912a59c5eaf6e39d31082a82d9816984047bc27ff7186e569d",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "c628e61aa89e48912a59c5eaf6e39d31082a82d9816984047bc27ff7186e569d",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "c628e61aa89e48912a59c5eaf6e39d31082a82d9816984047bc27ff7186e569d",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "ad8bbf2da4b9e2a774459232fa190414f4f42a01ea60650a7afd690721f836a5",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "ad8bbf2da4b9e2a774459232fa190414f4f42a01ea60650a7afd690721f836a5",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "ad8bbf2da4b9e2a774459232fa190414f4f42a01ea60650a7afd690721f836a5",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "ad8bbf2da4b9e2a774459232fa190414f4f42a01ea60650a7afd690721f836a5",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3cf21756427f49810273d50d0c4e9d2974bcd897e907cbcd605ddecd0448c6ff",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3cf21756427f49810273d50d0c4e9d2974bcd897e907cbcd605ddecd0448c6ff",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3cf21756427f49810273d50d0c4e9d2974bcd897e907cbcd605ddecd0448c6ff",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "3cf21756427f49810273d50d0c4e9d2974bcd897e907cbcd605ddecd0448c6ff",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2d9b698a9f21ec1cb4e71e5417461f7d887ffa7ea5c8a4efdfd64f8b1fc45a0b",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2d9b698a9f21ec1cb4e71e5417461f7d887ffa7ea5c8a4efdfd64f8b1fc45a0b",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2d9b698a9f21ec1cb4e71e5417461f7d887ffa7ea5c8a4efdfd64f8b1fc45a0b",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "2d9b698a9f21ec1cb4e71e5417461f7d887ffa7ea5c8a4efdfd64f8b1fc45a0b",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "872a5813a6f9f11f67149c8b22263d6d6549ca39c90d0cee29e6ecca5a691f34",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "872a5813a6f9f11f67149c8b22263d6d6549ca39c90d0cee29e6ecca5a691f34",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "872a5813a6f9f11f67149c8b22263d6d6549ca39c90d0cee29e6ecca5a691f34",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "872a5813a6f9f11f67149c8b22263d6d6549ca39c90d0cee29e6ecca5a691f34",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "0417d536c9d105040979d1fe31d7d6e326f8f4eda92754974ad413629fbb1811",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "0417d536c9d105040979d1fe31d7d6e326f8f4eda92754974ad413629fbb1811",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "0417d536c9d105040979d1fe31d7d6e326f8f4eda92754974ad413629fbb1811",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "0417d536c9d105040979d1fe31d7d6e326f8f4eda92754974ad413629fbb1811",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "ea931ab87bd62ecace05b9ec3e414644d41128509b1001c66c44e47ba9e5dd44",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "ea931ab87bd62ecace05b9ec3e414644d41128509b1001c66c44e47ba9e5dd44",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "ea931ab87bd62ecace05b9ec3e414644d41128509b1001c66c44e47ba9e5dd44",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "ea931ab87bd62ecace05b9ec3e414644d41128509b1001c66c44e47ba9e5dd44",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, noviembre 2, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\nEstado de las aplicaciones\n      \n    \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Rechazado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b en 10:00 - 10:45, lunes, noviembre 2, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nSu solicitud de reunión ha sido rechazada\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Reserva enviada:[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 10:00 - 10:45, lunes, octubre 19, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nReserva enviada\n[ANFITRIONA] aún necesita confirmar o rechazar la reserva.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "En espera de aprobación: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "multipart/alternative",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [],
+      "text_excerpt": "\nUn nuevo evento espera su aprobación\nAlguien ha solicitado programar un evento en su calendario.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true\nConfirmar o rechazar la solicitud\nhttps://cal-web-production-6281.up.railway.app + /bookings/upcoming",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app",
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "d3c7d3ffc0c6f91ecfec8c95ab0ef7702b90417ab01e69229cd4d7cfa314e5f1",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "d3c7d3ffc0c6f91ecfec8c95ab0ef7702b90417ab01e69229cd4d7cfa314e5f1",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nUn nuevo evento ha sido programado.\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "d3c7d3ffc0c6f91ecfec8c95ab0ef7702b90417ab01e69229cd4d7cfa314e5f1",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "d3c7d3ffc0c6f91ecfec8c95ab0ef7702b90417ab01e69229cd4d7cfa314e5f1",
+          "DTSTART": "20261019T130000Z",
+          "DTEND": "20261019T134500Z",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido programado\nUsted y cualquier otro asistente han recibido esta información.\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b ha sido reprogramado para el 11:00 - 11:45, lunes, noviembre 2, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "53fedbda86bd2d1e44654bd843c7d99f9fd59d63fb98343ed5b7d905801afb3b",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "53fedbda86bd2d1e44654bd843c7d99f9fd59d63fb98343ed5b7d905801afb3b",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\nEstado de las aplicaciones\n      \n    \n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Tu [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b ha sido reprogramado para el 11:00 - 11:45, lunes, noviembre 2, 2026.",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "53fedbda86bd2d1e44654bd843c7d99f9fd59d63fb98343ed5b7d905801afb3b",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "REQUEST",
+          "uid_sha256": "53fedbda86bd2d1e44654bd843c7d99f9fd59d63fb98343ed5b7d905801afb3b",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "1",
+          "STATUS": "CONFIRMED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nTu evento ha sido reprogramado.\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "asistente",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 11:00 - 11:45, lunes, noviembre 2, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "6ae779e4fedd8e8203f4ef2f1e85fb57b76676b0d53ec2233c1d68651c7f3bd3",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "6ae779e4fedd8e8203f4ef2f1e85fb57b76676b0d53ec2233c1d68651c7f3bd3",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
+      "manage_link_in_text": true,
+      "manage_link_in_html": false,
+      "link_shapes": [
+        "https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true"
+      ]
+    },
+    {
+      "role": "anfitriona",
+      "subject": "Cancelado: [ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b el 11:00 - 11:45, lunes, noviembre 2, 2026",
+      "from_domain": "rebelion.training",
+      "mime_types": [
+        "application/ics",
+        "multipart/alternative",
+        "multipart/mixed",
+        "text/calendar",
+        "text/html",
+        "text/plain"
+      ],
+      "calendar": [
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "6ae779e4fedd8e8203f4ef2f1e85fb57b76676b0d53ec2233c1d68651c7f3bd3",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        },
+        {
+          "METHOD": "CANCEL",
+          "uid_sha256": "6ae779e4fedd8e8203f4ef2f1e85fb57b76676b0d53ec2233c1d68651c7f3bd3",
+          "DTSTART": "20261102T140000Z",
+          "DTEND": "20261102T144500Z",
+          "SEQUENCE": "2",
+          "STATUS": "CANCELLED",
+          "organizer_is_no_reply_cal": true,
+          "manage_link_in_description": true
+        }
+      ],
+      "text_excerpt": "\nSe canceló su evento programado\nUsted y cualquier otro asistente han recibido esta información.\n\nMotivo de la cancelación (opcional):\n[ASISTENTE DE ENSAYO]b\n\nQué:\n[ASISTENTE DE ENSAYO] — oculto entre [ANFITRIONA] y [ASISTENTE DE ENSAYO]b\n\nZona horaria del Invitado:\nAmerica/Asuncion\n\nQuien:\n[ANFITRIONA] - Organizador\n[ASISTENTE DE ENSAYO]b\n[EMAIL]\n\nDonde:\nKoru\n\n¿Necesita reprogramar o cancelar? https://cal-web-production-6281.up.railway.app/booking/[UID]?changes=true",
       "manage_link_in_text": true,
       "manage_link_in_html": false,
       "link_shapes": [

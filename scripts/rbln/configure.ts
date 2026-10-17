@@ -84,7 +84,13 @@ async function main() {
   });
   const schedules = entities(await api("/schedules", "2024-06-11"));
   const eventTypes = entities(await api("/event-types?take=100", "2024-06-14"));
-  const mapping: { cal_event_type_id: number; cal_slug: string; offer_code: string; modality: string }[] = [];
+  const mapping: {
+    cal_event_type_id: number;
+    cal_slug: string;
+    offer_code: string;
+    modality: string;
+    meet_pending: boolean;
+  }[] = [];
   for (const modality of ["presencial", "online"] as const) {
     const name = modality === "presencial" ? "presencial-koru" : "online";
     const existing = unique(schedules, (row) => row.name === name);
@@ -110,6 +116,12 @@ async function main() {
     for (const [offer, title] of offers) {
       const slug = `${offer.replaceAll("_", "-")}-${modality}`;
       const current = unique(eventTypes, (row) => row.slug === slug);
+      const meetReady =
+        modality === "online" &&
+        Array.isArray(current?.locations) &&
+        current.locations.length === 1 &&
+        current.locations[0]?.type === "integration" &&
+        current.locations[0]?.integration === "google-meet";
       const desired = {
         title: `${title} · ${modality === "presencial" ? "Koru" : "Online"}`,
         slug,
@@ -125,8 +137,8 @@ async function main() {
         bookingRequiresAuthentication: true,
         interfaceLanguage: "es",
         hidden: true,
-        disableCancelling: { disabled: true },
-        disableRescheduling: { disabled: true },
+        disableCancelling: { disabled: false },
+        disableRescheduling: { disabled: false },
         requiresBookerEmailVerification: false,
         lockTimeZoneToggleOnBookingPage: true,
         hideOrganizerEmail: true,
@@ -134,7 +146,9 @@ async function main() {
         locations:
           modality === "presencial"
             ? [{ type: "address", address: "Koru", public: true }]
-            : [{ type: "integration", integration: "google-meet" }],
+            : meetReady
+              ? [{ type: "integration", integration: "google-meet" }]
+              : [{ type: "attendeeDefined" }],
         bookingFields: [
           { type: "name", label: "Nombre y apellido" },
           { type: "email", label: "Correo electrónico", required: true },
@@ -169,6 +183,7 @@ async function main() {
         cal_slug: slug,
         offer_code: offer,
         modality,
+        meet_pending: modality === "online" && !meetReady,
       });
       console.log(`${current ? "updated" : "created"}: ${slug} (${result.id})`);
     }

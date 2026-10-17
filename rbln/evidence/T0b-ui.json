@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-17T15:22:34.619Z",
+  "flags": {},
+  "screens": [
+    {
+      "name": "Giuli event types panel",
+      "html_language": "es",
+      "missing_spanish_keys_visible": [],
+      "english_fallbacks": [],
+      "powered_by_visible": false,
+      "cal_com_signup_links": 0,
+      "turnstile_frames": 0
+    },
+    {
+      "name": "attendee manage link with both flags true",
+      "html_language": "es",
+      "missing_spanish_keys_visible": [],
+      "english_fallbacks": [],
+      "powered_by_visible": false,
+      "cal_com_signup_links": 0,
+      "turnstile_frames": 0
+    },
+    {
+      "name": "attendee cancellation form with flags false",
+      "html_language": "es",
+      "missing_spanish_keys_visible": [
+        "cancellation_reason_optional_label"
+      ],
+      "english_fallbacks": [
+        {
+          "key": "cancellation_reason_optional_label",
+          "text": "Reason for cancellation (optional)"
+        }
+      ],
+      "powered_by_visible": false,
+      "cal_com_signup_links": 0,
+      "turnstile_frames": 0
+    },
+    {
+      "name": "attendee booker",
+      "html_language": "es",
+      "missing_spanish_keys_visible": [],
+      "english_fallbacks": [],
+      "powered_by_visible": false,
+      "cal_com_signup_links": 0,
+      "turnstile_frames": 0
+    }
+  ],
+  "both_flags_true": {
+    "cancel_button_count": 0,
+    "reschedule_link_count": 0
+  },
+  "public_cancellation": {
+    "http": 200,
+    "state": "cancelled"
+  },
+  "cleanup_remaining": 0
+}

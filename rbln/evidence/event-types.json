@@ -1,0 +1,76 @@
+{
+  "upstream_sha": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+  "user": "giuli",
+  "event_types": [
+    {
+      "cal_event_type_id": 2,
+      "cal_slug": "nutri-consulta-general-inicial-presencial",
+      "offer_code": "nutri_consulta_general_inicial",
+      "modality": "presencial",
+      "meet_pending": false
+    },
+    {
+      "cal_event_type_id": 3,
+      "cal_slug": "nutri-control-general-presencial",
+      "offer_code": "nutri_control_general",
+      "modality": "presencial",
+      "meet_pending": false
+    },
+    {
+      "cal_event_type_id": 4,
+      "cal_slug": "nutri-asesoria-deportiva-inicial-presencial",
+      "offer_code": "nutri_asesoria_deportiva_inicial",
+      "modality": "presencial",
+      "meet_pending": false
+    },
+    {
+      "cal_event_type_id": 5,
+      "cal_slug": "nutri-seguimiento-deportivo-presencial",
+      "offer_code": "nutri_seguimiento_deportivo",
+      "modality": "presencial",
+      "meet_pending": false
+    },
+    {
+      "cal_event_type_id": 6,
+      "cal_slug": "fuel-consulta-presencial",
+      "offer_code": "fuel_consulta",
+      "modality": "presencial",
+      "meet_pending": false
+    },
+    {
+      "cal_event_type_id": 7,
+      "cal_slug": "nutri-consulta-general-inicial-online",
+      "offer_code": "nutri_consulta_general_inicial",
+      "modality": "online",
+      "meet_pending": true
+    },
+    {
+      "cal_event_type_id": 8,
+      "cal_slug": "nutri-control-general-online",
+      "offer_code": "nutri_control_general",
+      "modality": "online",
+      "meet_pending": true
+    },
+    {
+      "cal_event_type_id": 9,
+      "cal_slug": "nutri-asesoria-deportiva-inicial-online",
+      "offer_code": "nutri_asesoria_deportiva_inicial",
+      "modality": "online",
+      "meet_pending": true
+    },
+    {
+      "cal_event_type_id": 10,
+      "cal_slug": "nutri-seguimiento-deportivo-online",
+      "offer_code": "nutri_seguimiento_deportivo",
+      "modality": "online",
+      "meet_pending": true
+    },
+    {
+      "cal_event_type_id": 11,
+      "cal_slug": "fuel-consulta-online",
+      "offer_code": "fuel_consulta",
+      "modality": "online",
+      "meet_pending": true
+    }
+  ]
+}

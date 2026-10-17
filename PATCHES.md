@@ -73,6 +73,28 @@ No se ha cambiado el locale por defecto. Primero se configura usuario `es` e
 `interfaceLanguage: "es"`; cualquier parche de idioma o de PoweredBy requiere
 un fallo reproducible de T0 y una entrada en este archivo.
 
+## Configuración P-05, sin parche funcional
+
+T0b verificó que `disableCancelling=true` bloquea tanto al asistente como al
+panel de Giuli y la API; `disableRescheduling=true` bloquea enlace y panel,
+aunque la API permite reprogramar. Ambos quedan en **false**, por decisión del
+orquestador. Los cambios externos de reservas pagadas pasan a revisión/alerta
+en el CRM, sin reintegro automático; política 24 h / 2 cambios asistida por Giuli.
+
+Los diez IDs se conservan en `rbln/evidence/event-types.json`. Los cinco online
+quedan ocultos, autenticados, con `meet_pending: true` y ubicación provisional
+`attendeeDefined`, aprobada explícitamente. No se reserva en ellos antes del GO.
+Omitir `locations` selecciona CalVideo por defecto
+(`packages/trpc/server/routers/viewer/eventTypes/heavy/create.handler.ts:73`);
+`[]` devuelve 400 (`packages/platform/types/event-types/event-types_2024_06_14/inputs/locations.input.ts:164`).
+Google Meet devuelve 400 mientras no esté conectado. El wizard, tras OAuth y
+conexión de Giuli, hace PATCH y GET de los cinco: falla si la única ubicación
+no es Meet. No se usan links falsos, CalVideo ni credenciales ficticias.
+
+PENDING bloquea el tipo propio después de la caché de 2 s y rechaza un segundo
+POST. No bloquea otro tipo del mismo usuario; ACCEPTED sí. La política entre
+tipos corresponde al puente, sin cambio de Cal. Ver T0a/T0b en `rbln/evidence/`.
+
 ## Actualización
 
 1. `git fetch upstream main` y revisar un **SHA concreto posterior** (licencia,

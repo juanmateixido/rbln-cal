@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-17T15:17:53.481Z",
+  "flags": {
+    "disableRescheduling": {
+      "public": {
+        "cancel_button_count": 1,
+        "reschedule_link_kind": "absent",
+        "heading": [],
+        "direct_reschedule_redirects_to_booking": true
+      },
+      "panel": {
+        "cancel": {
+          "count": 1,
+          "disabled": false,
+          "aria_disabled": null,
+          "text": "Cancelar este evento"
+        },
+        "reschedule": {
+          "count": 1,
+          "disabled": true,
+          "aria_disabled": null,
+          "text": "Reprogramar reserva"
+        },
+        "direct_reschedule_redirects_to_booking": true
+      }
+    },
+    "disableCancelling": {
+      "observed_at": "2026-10-17T15:17:02.108Z",
+      "public": {
+        "cancel_button_count": 0,
+        "reschedule_link_kind": "reschedule"
+      },
+      "panel": {
+        "cancel": {
+          "count": 1,
+          "disabled": true,
+          "text": "Cancelar este evento"
+        }
+      }
+    }
+  },
+  "cleanup_remaining": 0
+}

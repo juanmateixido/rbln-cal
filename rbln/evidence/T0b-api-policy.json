@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-17T15:16:31.479202+00:00",
+  "observations": {
+    "pending_cross_type": {
+      "event_a": 1,
+      "event_b": 2,
+      "a_slot_visible": false,
+      "b_slot_visible": true
+    },
+    "accepted_cross_type": {
+      "event_a": 1,
+      "event_b": 2,
+      "b_slot_visible": false
+    },
+    "disableCancelling": {
+      "path": "API v2 with owner API key",
+      "http": 400,
+      "state": null,
+      "error_code": null,
+      "message": null,
+      "message_withheld": false
+    },
+    "disableRescheduling": {
+      "path": "API v2 with owner API key",
+      "http": 201,
+      "state": "accepted",
+      "error_code": null,
+      "message": null,
+      "message_withheld": false
+    },
+    "cleanup": {
+      "remaining": 0,
+      "event1_flags_restored": true
+    }
+  }
+}

@@ -97,6 +97,15 @@ parche web en v1; tratar los logs como sensibles y no asumir que warn los sanea.
 
 ## Operación
 
+P-05: diez tipos ocultos y autenticados, mapa estable en
+[event-types.json](rbln/evidence/event-types.json). Ambos flags de deshabilitar
+cambios quedan en `false`: T0b probó que también bloquean el panel de Giuli
+(cancelación además bloquea la API). Se aplica la política asistida 24 h / 2
+cambios y revisión de cambios externos en CRM, sin reintegro automático.
+Es configuración, no parche. Los cinco online usan `attendeeDefined` provisional,
+`meet_pending: true` y cero reservas antes del GO. El wizard los convierte a
+Google Meet solo después de conectar Google, con relectura estricta de los cinco.
+
 - [Parches y procedimiento de actualización](PATCHES.md).
 - [Railway, secretos, T0, copias y rollback](deploy/railway.md).
 - Imágenes web/API construidas exclusivamente en GitHub Actions; no instalar

@@ -206,7 +206,9 @@ case "${1:---dry-run}" in
       '2. Giuli leyendo su correo: solicitar reset de un uso/6 h ahora, crear su clave, comprobar que la inicial falla.' \
       '   Registrar rechazo explícito y logout; secrets-vault retira la inicial después, según T14e.' \
       '3. Giuli: conectar Google y elegir Pacientes; comprobar calendario destino y conflictos por API.' \
+      '   Automático: PATCH de los 5 online a Google Meet; GET exige única ubicación Meet, sin attendeeDefined; si falla, el wizard no termina.' \
       'DNS se coordina aparte con el orquestador. BOOKING_MODE sigue off.'
+    node --test "$root/scripts/rbln/activate-meet.test.cjs"
     exit 0 ;;
   --images)
     [[ "${2:-}" =~ ^sha-[0-9a-f]{40}$ ]] || { printf '%s\n' 'Falta sha-<commit completo aprobado por CI>.' >&2; exit 2; }
@@ -284,6 +286,9 @@ pause 'Cuando Pacientes esté seleccionado, presioná Enter para verificarlo aut
 python3 "$reader" RBLN /crm CAL_API_KEY -- \
   python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_API_URL -- \
   node "$root/scripts/rbln/go-check.cjs" verify-calendar
+python3 "$reader" RBLN /crm CAL_API_KEY -- \
+  python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_API_URL -- \
+  node "$root/scripts/rbln/activate-meet.cjs"
 note 'BOOKING_MODE permanece off. La activación del puente requiere el GO específico del orquestador.'
 note 'Evidencia: rbln/evidence/agent-sessions.jsonl. Avisar a secrets-vault de la rotación para aplicar T14e.'
 finish
