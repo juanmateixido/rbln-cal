@@ -43,11 +43,11 @@ async function main() {
     });
   } else if (action === "verify-calendar") {
     const response = await fetch(`${process.env.CAL_API_URL}/calendars`, {
-      headers: { Authorization: `Bearer ${process.env.CAL_API_KEY_CRM}`, "cal-api-version": "2024-06-11" },
+      headers: { Authorization: `Bearer ${process.env.CAL_API_KEY}`, "cal-api-version": "2024-06-11" },
       redirect: "error",
       signal: AbortSignal.timeout(30000),
     });
-    if (!response.ok()) throw new Error("Calendar lookup failed");
+    if (!response.ok) throw new Error("Calendar lookup failed");
     const { data } = await response.json();
     const calendars = data.connectedCalendars
       .filter((c) => c.integration.type === "google_calendar")

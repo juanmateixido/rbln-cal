@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 BASE = os.environ["CAL_API_URL"].rstrip("/")
-KEY = os.environ["CAL_API_KEY_CRM"]
+KEY = os.environ["CAL_API_KEY"]
 EVENT = int(os.environ["T0_EVENT_TYPE_ID"])
 RESULTS = {}
 OPEN = set()

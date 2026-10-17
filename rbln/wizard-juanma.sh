@@ -281,7 +281,8 @@ step 'Iniciá sesión con tu nueva clave, conectá tu cuenta Google y autorizá 
 open_for_juanma 'https://agenda.rebelion.training/settings/my-account/calendars'
 step 'Elegí Pacientes como calendario donde se crean las reservas y marcá los calendarios que bloquean disponibilidad.'
 pause 'Cuando Pacientes esté seleccionado, presioná Enter para verificarlo automáticamente.'
-python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_API_URL CAL_API_KEY_CRM -- \
+python3 "$reader" RBLN /crm CAL_API_KEY -- \
+  python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_API_URL -- \
   node "$root/scripts/rbln/go-check.cjs" verify-calendar
 note 'BOOKING_MODE permanece off. La activación del puente requiere el GO específico del orquestador.'
 note 'Evidencia: rbln/evidence/agent-sessions.jsonl. Avisar a secrets-vault de la rotación para aplicar T14e.'

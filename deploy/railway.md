@@ -99,8 +99,11 @@ secrets-vault con su procedimiento: el lector no tiene permisos de borrado.
 
 La cuenta de Giuliana se crea mediante el formulario web de setup con
 Playwright local: [bootstrap.cjs](../scripts/rbln/bootstrap.cjs). No se insertan
-API keys por SQL. La interfaz de API keys produce `CAL_API_KEY_CRM`, que se
-carga directamente en `RBLN /cal`; no se imprime ni se guarda en un archivo.
+API keys por SQL. La interfaz de API keys produce `CAL_API_KEY`, que se
+carga directamente en `RBLN /crm` solo después de la aprobación de crm-foundation.
+Hasta ese OK no se crea la clave. El script exige `CAL_CRM_KEY_APPROVED=yes`
+como constancia operativa de esa aprobación; no sustituye al mensaje del responsable.
+No se imprime ni se guarda en un archivo ni se duplica en `/cal`.
 El perfil se configura por tRPC y el resto por API v2 con
 [configure.ts](../scripts/rbln/configure.ts). Correrlo dos veces y comparar el
 mapa de 10 eventos antes de dar P-05 por aprobado.
@@ -154,8 +157,8 @@ solicitudes desde el mail: el puente registra/alerta `confirmed_unpaid` si ocurr
 
 `RBLN /crm` pertenece a crm-foundation. Los cuatro nombres cargados inicialmente
 (`CAL_API_URL`, `CAL_WEBHOOK_SECRET`, `BOOKING_MODE`, `BOOKING_TEST_TO`) están
-pendientes de su aprobación. `CAL_API_KEY` no se carga allí sin ese OK; la
-API key permanece en `/cal CAL_API_KEY_CRM`. Comunicar solo nombres/rutas al
+pendientes de su aprobación. `CAL_API_KEY` no se crea sin ese OK y luego se guarda directamente allí,
+sin el fallback anterior `/cal CAL_API_KEY_CRM` (nunca llegó a crearse). Comunicar solo nombres/rutas al
 catálogo de secrets-vault, con copia a ambos orquestadores.
 
 ## Actualización, ensayo y rollback
@@ -185,7 +188,7 @@ comprobar integridad y T0 en entorno aislado, y luego cambiar las URLs DB con
 restauración y reservas que requieren reconciliación; confirmar rollback con
 el orquestador. Redis no es la fuente de reservas: reconstruir cachés desde DB.
 
-Rotación de API key: crear reemplazo por UI, guardar `/cal CAL_API_KEY_CRM`,
+Rotación de API key: crear reemplazo por UI, guardar `RBLN /crm CAL_API_KEY` con aprobación de foundation,
 comprobar `/v2/me`, coordinar copia al CRM con foundation y desplegar consumidor;
 revocar anterior solo tras verificar la nueva. Rotación de webhook: coordinar
 ventana con bridge, habilitar temporalmente verificación de ambos secretos en

@@ -73,6 +73,18 @@ se debió a omitir `packages/types/*.d.ts` al acotar include; e0a1509 lo restaur
 Los residuales aceptados por el orquestador están listados en README/PATCHES,
 condicionados al uso de API key por hash, sin OAuth de plataforma/atoms/Stripe.
 
+Sol aprobó el delta Redis de `ed517af6c64012ddc7ff54ed3adb291805d252ad`.
+`types` y `privacy` pasaron en
+[run 39041835112](https://github.com/juanmateixido/rbln-cal/actions/runs/39041835112),
+incluido el chequeo de todos los archivos modificados con dependencias de la
+imagen API. PR #1 pasó a ready y se mergeó únicamente a `rbln` el 17/10 a las
+14:45:51 UTC: `a7e8cc3096665cefe10a36579d64fdbbbc28617b`. La imagen de ese SHA
+se construye en Actions; el gate runtime sigue pendiente.
+
+Condición vigente de la clave: no crear API key hasta que crm-foundation apruebe
+`RBLN /crm CAL_API_KEY`. Después se guarda directamente allí; el fallback anterior
+`/cal CAL_API_KEY_CRM` quedó revocado y nunca llegó a crearse.
+
 El comando completo solicitado `yarn type-check:ci --force --concurrency=1`
 pasó en la imagen baseline en
 [run 39040608795](https://github.com/juanmateixido/rbln-cal/actions/runs/39040608795)

@@ -10,7 +10,7 @@ function fail(message: string): never {
 }
 const env = (name: string) => process.env[name] || fail(`Missing ${name}`);
 const base = env("CAL_API_URL").replace(/\/$/, "");
-const apiKey = env("CAL_API_KEY_CRM");
+const apiKey = env("CAL_API_KEY");
 const secret = env("CAL_WEBHOOK_SECRET");
 if (secret.length < 32) fail("CAL_WEBHOOK_SECRET must contain at least 32 characters");
 if (!/^https:\/\/cal-api-production-902f\.up\.railway\.app\/v2$/.test(base)) {

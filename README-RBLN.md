@@ -105,7 +105,8 @@ parche web en v1; tratar los logs como sensibles y no asumir que warn los sanea.
   `deploy/sync-vars.sh --dry-run` lista nombres; `--apply` replica y despliega
   una vez por servicio. Solo usa `leer.py`/`bee-lector`, nunca credenciales Admin.
 - Las cinco variables del puente corresponden a `RBLN /crm`, bajo aprobación
-  de crm-foundation. Hasta entonces la API key queda en `/cal CAL_API_KEY_CRM`.
+  de crm-foundation. La API key se crea solo después de su aprobación y se guarda
+  directamente en `RBLN /crm CAL_API_KEY`; no se crea una copia en `/cal`.
   **`BOOKING_MODE=off` hasta GO de Juanma.** `/cal` no se sincroniza al CRM.
 - `SMTP_MODE=capture` mantiene los correos en el receptor T0; no se activa
   Mailgun ni se ejecuta el wizard de Google sin GO.

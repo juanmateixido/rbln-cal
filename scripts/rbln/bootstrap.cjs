@@ -5,9 +5,11 @@ const { withSession, login } = require("./browser-session.cjs");
 
 async function main() {
   if (process.env.SMTP_MODE !== "capture") throw new Error("Bootstrap requires SMTP capture");
+  if (process.env.CAL_CRM_KEY_APPROVED !== "yes")
+    throw new Error("crm-foundation approval is required before creating the API key");
   const reader = `${homedir()}/.config/infisical/leer.py`;
   const keyExists =
-    spawnSync("python3", [reader, "RBLN", "/cal", "CAL_API_KEY_CRM", "--", "true"], {
+    spawnSync("python3", [reader, "RBLN", "/crm", "CAL_API_KEY", "--", "true"], {
       stdio: "ignore",
     }).status === 0;
   await withSession("P-05 bootstrap: single account, profile and CRM API key through UI", async (session) => {
@@ -65,7 +67,7 @@ async function main() {
     if (!/^cal_[a-zA-Z0-9_-]+$/.test(key)) throw new Error("Unexpected API key format");
     const saved = spawnSync(
       "python3",
-      [`${homedir()}/.config/infisical/cargar.py`, "RBLN", "/cal", "CAL_API_KEY_CRM"],
+      [`${homedir()}/.config/infisical/cargar.py`, "RBLN", "/crm", "CAL_API_KEY"],
       {
         input: key,
         encoding: "utf8",
@@ -73,7 +75,7 @@ async function main() {
       }
     );
     if (saved.status !== 0) throw new Error("API key storage failed; do not create another key");
-    console.log("API key stored: RBLN /cal CAL_API_KEY_CRM");
+    console.log("API key stored: RBLN /crm CAL_API_KEY");
   });
 }
 
