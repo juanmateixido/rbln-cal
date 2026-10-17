@@ -39,7 +39,13 @@ export class OAuthFlowService {
 
       await this.redisService.redis.expireat(cacheKey, Math.floor(expiry.getTime() / 1000));
     } catch (err) {
-      this.logger.error("Access Token Propagation Failed, falling back to DB...", err);
+      this.logger.error("Access Token Propagation Failed, falling back to DB...", {
+        errorType: err instanceof Error ? err.name : typeof err,
+        code:
+          err && typeof err === "object" && "code" in err && typeof err.code === "string"
+            ? err.code
+            : undefined,
+      });
     }
   }
 

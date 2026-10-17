@@ -1,5 +1,5 @@
 import { Logger } from "@nestjs/common";
-import { ZodSchema } from "zod";
+import type { ZodSchema } from "zod";
 
 const logger = new Logger("safeParse");
 
@@ -8,16 +8,8 @@ export function safeParse<T>(schema: ZodSchema<T>, value: unknown, defaultValue:
   if (result.success) {
     return result.data;
   } else {
-    const errorStack = new Error().stack;
-
     if (logError) {
-      logger.error(
-        `Zod parsing failed.\n` +
-          `1. Schema: ${schema.description || "UnnamedSchema"}\n` +
-          `2. Input: ${JSON.stringify(value, null, 2)}\n` +
-          `3. Zod Error: ${result.error}\n` +
-          `4. Call Stack: ${errorStack}`
-      );
+      logger.error("Zod parsing failed", { codes: result.error.issues.map(({ code }) => code) });
     }
 
     return defaultValue;

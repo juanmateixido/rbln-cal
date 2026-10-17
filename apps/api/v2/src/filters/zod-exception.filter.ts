@@ -1,12 +1,11 @@
-import { extractUserContext } from "@/lib/extract-user-context";
-import { filterReqHeaders } from "@/lib/filterReqHeaders";
+import { BAD_REQUEST, ERROR_STATUS } from "@calcom/platform-constants";
+import { Response } from "@calcom/platform-types";
 import type { ArgumentsHost, ExceptionFilter } from "@nestjs/common";
 import { Catch, HttpStatus, Logger } from "@nestjs/common";
 import { Request } from "express";
 import { ZodError } from "zod";
-
-import { BAD_REQUEST, ERROR_STATUS } from "@calcom/platform-constants";
-import { Response } from "@calcom/platform-types";
+import { extractUserContext } from "@/lib/extract-user-context";
+import { filterReqHeaders } from "@/lib/filterReqHeaders";
 
 @Catch(ZodError)
 export class ZodExceptionFilter implements ExceptionFilter {
@@ -16,15 +15,16 @@ export class ZodExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
-    const requestId = request.headers["X-Request-Id"] ?? "unknown-request-id";
-    response.setHeader("X-Request-Id", requestId.toString());
+    const requestId =
+      request.headers["X-Request-Id"] ?? request.headers["x-request-id"] ?? "unknown-request-id";
+    response.setHeader("X-Request-Id", (request.headers["X-Request-Id"] ?? "unknown-request-id").toString());
 
-    const userContext = extractUserContext(request);
-    this.logger.error(`ZodError: ${error.message}`, {
-      error,
-      body: request.body,
+    const { userEmail: _userEmail, ...userContext } = extractUserContext(request);
+    this.logger.error("ZodError", {
+      errorType: error.name,
+      statusCode: HttpStatus.BAD_REQUEST,
       headers: filterReqHeaders(request.headers),
-      url: request.url,
+      url: request.path,
       method: request.method,
       requestId,
       ...userContext,
