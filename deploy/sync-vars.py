@@ -34,7 +34,7 @@ def collections():
                       "CALENDSO_ENCRYPTION_KEY NEXT_PUBLIC_WEBAPP_URL NEXTAUTH_URL "
                       "NEXT_PUBLIC_APP_NAME NEXT_PUBLIC_API_V2_URL CALCOM_TELEMETRY_DISABLED "
                       "ENABLE_ASYNC_TASKER EMAIL_FROM EMAIL_FROM_NAME")
-    common.update(NODE_ENV="production")
+    common.update(NODE_ENV="production", NEXTAUTH_DEBUG="", NEXT_PUBLIC_LOGGER_LEVEL="4")
     if os.environ.get("GOOGLE_API_CREDENTIALS"):
         common["GOOGLE_API_CREDENTIALS"] = os.environ["GOOGLE_API_CREDENTIALS"]
     smtp_mode = os.environ["SMTP_MODE"]

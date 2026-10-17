@@ -18,11 +18,11 @@ export class OAuth2HttpExceptionFilter implements ExceptionFilter<OAuth2HttpExce
 
     const { userEmail: _userEmail, ...safeUserContext } = extractUserContext(request);
     const { Authorization: _auth, ...safeHeaders } = filterReqHeaders(request.headers);
-    this.logger.error(`OAuth2 Http Exception: ${exception.oAuthErrorData.error}`, {
-      exception,
-      body: "[REDACTED]",
+    this.logger.error("OAuth2 Http Exception", {
+      errorType: exception.name,
+      statusCode: exception.getStatus(),
       headers: safeHeaders,
-      url: request.url,
+      url: request.path,
       method: request.method,
       requestId,
       ...safeUserContext,

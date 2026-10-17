@@ -78,6 +78,13 @@ class SyncSafety(unittest.TestCase):
             groups = sync.collections()
         self.assertEqual(groups["cal-web"]["EMAIL_SERVER_PASSWORD"], self.env["MAILGUN_SMTP_PASSWORD"])
 
+    def test_deployed_log_levels_suppress_sensitive_informational_logs(self):
+        with patch.dict(os.environ, self.env, clear=True):
+            groups = sync.collections()
+        self.assertEqual(groups["cal-api"]["LOG_LEVEL"], "warn")
+        self.assertEqual(groups["cal-web"]["NEXTAUTH_DEBUG"], "")
+        self.assertEqual(groups["cal-web"]["NEXT_PUBLIC_LOGGER_LEVEL"], "4")
+
 
 if __name__ == "__main__":
     unittest.main()

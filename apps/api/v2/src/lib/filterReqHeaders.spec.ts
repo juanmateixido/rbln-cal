@@ -35,4 +35,24 @@ describe("filterReqHeaders", () => {
     expect(filtered["x-unlisted-header"]).toBeUndefined();
     expect(JSON.stringify(filtered)).not.toContain("[REDACTED]");
   });
+
+  it("redacts arrays and duplicate casings without retaining any credential", () => {
+    const headers = {
+      authorization: "fictitious-lowercase",
+      Authorization: "fictitious-uppercase",
+      Cookie: ["fictitious-cookie-one", "fictitious-cookie-two"],
+      "X-Access-Token": ["fictitious-token-one", "fictitious-token-two"],
+    };
+    const filtered = filterReqHeaders(headers);
+
+    for (const name of Object.keys(headers)) expect(filtered[name]).toBe("[REDACTED]");
+    expect(JSON.stringify(filtered)).not.toContain("fictitious-");
+    expect(headers.Cookie).toEqual(["fictitious-cookie-one", "fictitious-cookie-two"]);
+  });
+
+  it.each(["x-cal-client-id", "X-Cal-Client-Id"])("omits unused OAuth header %s", (name) => {
+    expect(JSON.stringify(filterReqHeaders({ [name]: "fictitious-client" }))).not.toContain(
+      "fictitious-client"
+    );
+  });
 });

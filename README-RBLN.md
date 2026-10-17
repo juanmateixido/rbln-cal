@@ -26,6 +26,34 @@ de un SHA concreto y revisado de `cal.diy main`, nunca de aquellos tags.
 - Pendiente después del lanzamiento: Juanma decide si reportar este hallazgo
   a `calcom/cal.diy`. No se abre issue ni PR upstream ni se contacta al proyecto.
 
+La ampliación del PR #1 elimina cuerpos, queries y objetos/mensajes crudos de
+excepción de los logs de error. Estos últimos también pueden repetir la query
+(por ejemplo, un 404 de Nest). Conserva tipo/código/status e identificador de
+request; las respuestas HTTP mantienen sus códigos y mensajes. Tampoco registra
+el correo del usuario. `x-cal-client-id` queda fuera de la allowlist.
+
+Archivos de aplicación divergentes que debe preservar el sync:
+
+- `apps/api/v2/src/lib/filterReqHeaders.ts`
+- `apps/api/v2/src/filters/http-exception.filter.ts`
+- `apps/api/v2/src/filters/prisma-exception.filter.ts`
+- `apps/api/v2/src/filters/trpc-exception.filter.ts`
+- `apps/api/v2/src/filters/zod-exception.filter.ts`
+- `apps/api/v2/src/filters/calendar-service-exception.filter.ts`
+- `apps/api/v2/src/modules/auth/oauth2/filters/oauth2-http-exception.filter.ts`
+
+Conservar también `filterReqHeaders.spec.ts`, `http-exception.filter.spec.ts`,
+el workflow `rbln-log-tests.yml` y la guarda `scripts/rbln/check-log-policy.cjs`.
+Los middleware/interceptor informativos de API no se parchean: `LOG_LEVEL=warn`
+los suprime, y la CI/smoke rechazan el nivel por defecto `info`.
+
+Riesgo residual web v1: `packages/features/auth/lib/next-auth-options.ts:154,430,569`
+y `packages/app-store/_utils/oauth/OAuthManager.ts:340` pueden imprimir credenciales,
+sesiones o el bearer de Google si se habilita debug. No se parchean en v1.
+El sync fija `NEXTAUTH_DEBUG` vacío (evita cadenas truthy) y
+`NEXT_PUBLIC_LOGGER_LEVEL=4` (warn); la guarda de CI/smoke exige nivel 4–6 y debug
+ausente/vacío. No habilitar debug para investigar una incidencia con credenciales.
+
 ## Operación
 
 - [Parches y procedimiento de actualización](PATCHES.md).

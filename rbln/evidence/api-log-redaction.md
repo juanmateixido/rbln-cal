@@ -35,11 +35,20 @@ Cal), usa los globals compatibles con Jest y no añade dependencias:
 - Con parche: **16 pases, 0 fallos**, 43 aserciones.
 - Biome y TypeScript estricto de ambos archivos: pasan.
 
+Ronda 2: 19 tests de encabezados pasan (arrays, duplicados y eliminación de
+x-cal-client-id incluidos); 3 tests de guarda de niveles y 6 de sync pasan.
+Los seis filtros de error omiten body/query/excepción cruda y correo del actor;
+la prueba nueva captura Logger.error por cada punto header/body/query, conserva
+el requestId y verifica respuesta 404/mensaje intactos. Su ejecución con Nest
+real y contraste rojo contra `54343aa` corre en `rbln-log-tests.yml` de CI;
+**resultado pendiente al preparar esta revisión**, no se construye Cal en bee.
+
 **Reproducción HTTP y log real: PENDIENTES.** No sustituirlas por este test.
-Enviar un bearer inventado a una ruta inexistente de la imagen sin parche;
+Enviar un bearer, body y query inventados a una ruta inexistente de la imagen sin parche;
 guardar el log con ese marcador visible en `rbln/evidence/local-only/`, excluido
 de Git. Registrar deployment/digest, hora UTC y resultado sanitizado aquí.
-Repetir con el mismo marcador en la imagen parcheada y comprobar `[REDACTED]`.
+Repetir con los mismos marcadores en la imagen parcheada: header `[REDACTED]`,
+body/query ausentes, identificador conservado. Ninguna credencial real en la prueba.
 Hasta completar ambos pasos y la revisión, no crear CAL_API_KEY_CRM ni abrir
 ninguna sesión de Giuliana. SMTP captura y BOOKING_MODE off permanecen vigentes.
 
@@ -54,6 +63,8 @@ para credenciales/sesión, por debajo del nivel configurado por defecto (warn).
 Sentry no tiene DSN configurado. No se identificó aquí el mismo volcado de
 headers de la API; **falta comprobar en ejecución errores web con marcador**.
 Esta revisión acotada no afirma que todo log posible esté libre de secretos.
+La ronda 2 mantiene la web sin parches y agrega guardas de configuración: debug
+ausente/vacío, nivel warn o superior, con las rutas de riesgo residual en README/PATCHES.
 
 No se modifican autenticación, reservas, mails ni idioma. El reporte a terceros
 queda pendiente de decisión de Juanma después del lanzamiento; no se contactó

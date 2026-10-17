@@ -1,0 +1,60 @@
+name: RBLN log privacy regression
+on:
+  pull_request:
+    branches: [rbln]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install isolated test tools, without installing Cal
+        run: >-
+          npm install --prefix "$RUNNER_TEMP/log-tests" --no-audit --no-fund
+          jest@29.7.0 ts-jest@29.1.4 typescript@5.9.3
+          @nestjs/common@10.4.20 @nestjs/core@10.4.20
+          reflect-metadata@0.1.14 rxjs@7.8.2 node-mocks-http@1.16.2
+      - name: Capture logger and prove regression against the anchor
+        env:
+          TEST_DEPS: ${{ runner.temp }}/log-tests
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          temp=pathlib.Path(os.environ['RUNNER_TEMP'])
+          deps=os.environ['TEST_DEPS']+'/node_modules'
+          config={'rootDir':os.environ['GITHUB_WORKSPACE']+'/apps/api/v2',
+            'testEnvironment':'node','moduleDirectories':[deps,'node_modules'],
+            'moduleNameMapper':{'^@/(.*)$':'<rootDir>/src/$1'},
+            'transform':{'^.+\\.ts$':[deps+'/ts-jest',{'isolatedModules':True,'diagnostics':False,
+              'tsconfig':{'target':'ES2021','module':'commonjs','esModuleInterop':True,
+                'experimentalDecorators':True,'emitDecoratorMetadata':True}}]}}
+          (temp/'log-jest.json').write_text(json.dumps(config))
+          PY
+          test_logs() {
+            node "$TEST_DEPS/node_modules/jest/bin/jest.js" --config "$RUNNER_TEMP/log-jest.json" \
+              --runInBand src/lib/filterReqHeaders.spec.ts src/filters/http-exception.filter.spec.ts "$@"
+          }
+          test_logs
+          for file in src/lib/filterReqHeaders.ts src/filters/http-exception.filter.ts; do
+            cp "apps/api/v2/$file" "$RUNNER_TEMP/$(basename "$file")"
+            git show "54343aa685ae8f33159d2f485ec4a57bad5c574a:apps/api/v2/$file" > "apps/api/v2/$file"
+          done
+          if test_logs --json --outputFile="$RUNNER_TEMP/anchor-results.json"; then
+            echo 'Regression tests incorrectly accepted the unpatched anchor'; exit 1
+          fi
+          python3 - <<'PY'
+          import json,os,pathlib
+          result=json.loads((pathlib.Path(os.environ['RUNNER_TEMP'])/'anchor-results.json').read_text())
+          cases=[case for suite in result['testResults'] for case in suite['assertionResults']]
+          for point in ('header','body','query'):
+            assert any(case['status']=='failed' and 'keeps '+point+' credentials' in case['fullName'] for case in cases), point
+          PY
+          node --test scripts/rbln/check-log-policy.test.cjs
+          python3 deploy/test-sync-vars.py

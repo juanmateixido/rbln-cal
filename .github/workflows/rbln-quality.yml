@@ -26,6 +26,7 @@ jobs:
       - run: |
           python3 deploy/test-sync-vars.py
           python3 deploy/test-public-image.py
+          node --test scripts/rbln/check-log-policy.test.cjs
           bash -n deploy/sync-vars.sh rbln/wizard-juanma.sh
           rbln/wizard-juanma.sh --dry-run
           for script in scripts/rbln/*.cjs; do node --check "$script"; done

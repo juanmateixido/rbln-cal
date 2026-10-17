@@ -1,11 +1,10 @@
-import { extractUserContext } from "@/lib/extract-user-context";
-import { filterReqHeaders } from "@/lib/filterReqHeaders";
-import { ArgumentsHost, Catch, ExceptionFilter, Logger } from "@nestjs/common";
-import { Request } from "express";
-
 import { ERROR_STATUS } from "@calcom/platform-constants";
 import { TRPCError } from "@calcom/platform-libraries";
 import { Response } from "@calcom/platform-types";
+import { ArgumentsHost, Catch, ExceptionFilter, Logger } from "@nestjs/common";
+import { Request } from "express";
+import { extractUserContext } from "@/lib/extract-user-context";
+import { filterReqHeaders } from "@/lib/filterReqHeaders";
 
 export type TRPCErrorCode = TRPCError["code"];
 
@@ -118,15 +117,16 @@ export class TRPCExceptionFilter implements ExceptionFilter {
     const statusCode = errorDefinition.statusCode;
     const errorMessage = exception.message || errorDefinition.message;
 
-    const requestId = request.headers["X-Request-Id"] ?? "unknown-request-id";
+    const requestId =
+      request.headers["X-Request-Id"] ?? request.headers["x-request-id"] ?? "unknown-request-id";
     response.setHeader("X-Request-Id", requestId.toString());
 
-    const userContext = extractUserContext(request);
-    this.logger.error(`TRPC Exception Filter: ${exception?.message}`, {
-      exception,
-      body: request.body,
+    const { userEmail: _userEmail, ...userContext } = extractUserContext(request);
+    this.logger.error("TRPC Exception Filter", {
+      errorType: exception.name,
+      statusCode,
       headers: filterReqHeaders(request.headers),
-      url: request.url,
+      url: request.path,
       method: request.method,
       requestId,
       ...userContext,

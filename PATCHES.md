@@ -15,6 +15,17 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   Excepción de seguridad aprobada para T0a, con PR separado hacia `rbln` y
   revisión de Sol gestionada por el orquestador. Preservar en todo merge de
   upstream. [Prueba y gate de despliegue](rbln/evidence/api-log-redaction.md).
+- Seguridad ampliada — los seis filtros de error listados en el README omiten
+  body, query, correo del usuario y excepción cruda (su mensaje puede contener
+  la query). Conservan requestId y metadatos de error; respuestas sin cambios.
+  `x-cal-client-id` deja de registrarse. Las pruebas capturan Logger.error con
+  marcadores ficticios independientes en header/body/query y mantienen el 404.
+- Guarda, sin parche web/middleware informativos — `deploy/sync-vars.py` fija
+  API `LOG_LEVEL=warn`, `NEXTAUTH_DEBUG` vacío y `NEXT_PUBLIC_LOGGER_LEVEL=4`.
+  `scripts/rbln/check-log-policy.cjs` los verifica en CI y dentro del contenedor
+  del smoke. Riesgo residual: `next-auth-options.ts:154,430,569` (credenciales y
+  sesión) y `packages/app-store/_utils/oauth/OAuthManager.ts:340` (bearer Google)
+  siguen teniendo logs debug; nunca bajar el nivel ni habilitar debug en v1.
 - P-01 — `.github/workflows/image.yml`: construye web y API v2 solo en GitHub
   Actions, prueba migraciones/arranque y publica imágenes GHCR con etiqueta
   `sha-<commit completo>` y revisión OCI. Sin credenciales de
