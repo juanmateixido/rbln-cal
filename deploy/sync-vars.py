@@ -48,7 +48,7 @@ def collections():
         raise RuntimeError("SMTP_MODE must be capture or mailgun")
     api = common | selected("DATABASE_READ_URL DATABASE_WRITE_URL REDIS_URL JWT_SECRET "
                             "API_URL")
-    api.update(API_PORT="5555", PORT="5555", LOG_LEVEL="WARN",
+    api.update(API_PORT="5555", PORT="5555", LOG_LEVEL="warn",
                STRIPE_API_KEY="sk_test_unused", STRIPE_WEBHOOK_SECRET="whsec_unused")
     return {
         "postgres": {"POSTGRES_PASSWORD": os.environ["POSTGRES_PASSWORD"],

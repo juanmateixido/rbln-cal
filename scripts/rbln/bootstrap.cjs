@@ -22,10 +22,17 @@ async function main() {
       const created = page.waitForResponse(
         (r) => r.url().endsWith("/api/auth/setup") && r.request().method() === "POST"
       );
+      const signedIn = page.waitForResponse((r) => r.url().includes("/api/auth/callback/credentials"));
       await page.locator('#wizard-step-1 button[type="submit"]').click();
       if (!(await created).ok()) throw new Error("Setup failed");
+      await signedIn;
     }
-    if (!(await login(session)).authenticated) throw new Error("Bootstrap login failed");
+    const current = await (await context.request.get(`${base}/api/auth/session`)).json();
+    if (
+      current.user?.email?.toLowerCase() !== process.env.CAL_ADMIN_EMAIL.toLowerCase() &&
+      !(await login(session)).authenticated
+    )
+      throw new Error("Bootstrap login failed");
     const profile = await context.request.post(`${base}/api/trpc/me/updateProfile`, {
       data: {
         json: {
