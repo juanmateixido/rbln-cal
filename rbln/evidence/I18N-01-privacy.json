@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-17T16:04:27.722183+00:00",
+  "revision": "878c287ee1c12420ecac7c47739433f95e11b02a",
+  "api": {
+    "image": "ghcr.io/juanmateixido/rbln-cal-api@sha256:8ae9a63e168a06f1a0898e42bb6a61c732ca044a6503b03fa977733e3f0b7170",
+    "deployment": "27ad8e81-c006-46b5-bcb6-0c477e8086cf",
+    "requested_at": "2026-10-17T16:00:12.008727+00:00"
+  },
+  "web": {
+    "image": "ghcr.io/juanmateixido/rbln-cal-web@sha256:524a175c5bdb04c872e0dc8d5f21de9abada8a067334e1d665b92ff0aacb8666",
+    "deployment": "3e9f6bb8-d617-4eb3-b2b9-1e2462791789",
+    "requested_at": "2026-10-17T16:02:25.732545+00:00"
+  },
+  "health_http": 200,
+  "probe_http": 404,
+  "matching_event": true,
+  "marker_count": 0,
+  "header_redacted": true,
+  "request_id_present": true,
+  "real_key_in_log_window": false,
+  "runtime_log_entries": 1,
+  "untruncated": true,
+  "raw_logs_saved": false,
+  "pass": true
+}

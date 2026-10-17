@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-17T16:01:33.830570+00:00",
+  "services": {
+    "api": {
+      "smtp_capture_host": true,
+      "smtp_capture_port": true,
+      "smtp_credentials_empty": true,
+      "nextauth_debug_disabled": true,
+      "web_logger_warn_or_higher": true,
+      "api_log_warn_or_higher": true
+    },
+    "web": {
+      "smtp_capture_host": true,
+      "smtp_capture_port": true,
+      "smtp_credentials_empty": true,
+      "nextauth_debug_disabled": true,
+      "web_logger_warn_or_higher": true
+    }
+  },
+  "pass": true,
+  "values_retained": false
+}

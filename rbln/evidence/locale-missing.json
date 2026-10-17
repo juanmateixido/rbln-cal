@@ -1,7 +1,8 @@
 {
   "upstream_sha": "54343aa685ae8f33159d2f485ec4a57bad5c574a",
+  "fork_sha": "878c287ee1c12420ecac7c47739433f95e11b02a",
   "en_keys": 4731,
-  "es_keys": 4610,
+  "es_keys": 4611,
   "missing_keys": [
     "api_docs",
     "app_icon",
@@ -12,7 +13,6 @@
     "available_on_plan",
     "avatar_of_name",
     "busy_time",
-    "cancellation_reason_optional_label",
     "cannot_move_organization_to_organization",
     "cannot_move_subteam_already_in_org",
     "close_shortcut",
@@ -126,5 +126,6 @@
     "user_updated_successfully",
     "verify_email_subject_no_branding"
   ],
-  "visible_patient_or_giuli": "PENDING T0b"
+  "empty_es_count": 0,
+  "visible_patient_or_giuli": "Observed cancellation fallback fixed and verified in deployed UI; no claim about unvisited screens. Historical UI evidence: T0b-ui.json; recheck: I18N-01-ui.json"
 }

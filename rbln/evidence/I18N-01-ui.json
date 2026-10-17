@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-17T16:04:43.922Z",
+  "revision": "878c287ee1c12420ecac7c47739433f95e11b02a",
+  "api": {
+    "image": "ghcr.io/juanmateixido/rbln-cal-api@sha256:8ae9a63e168a06f1a0898e42bb6a61c732ca044a6503b03fa977733e3f0b7170",
+    "deployment": "27ad8e81-c006-46b5-bcb6-0c477e8086cf",
+    "requested_at": "2026-10-17T16:00:12.008727+00:00"
+  },
+  "web": {
+    "image": "ghcr.io/juanmateixido/rbln-cal-web@sha256:524a175c5bdb04c872e0dc8d5f21de9abada8a067334e1d665b92ff0aacb8666",
+    "deployment": "3e9f6bb8-d617-4eb3-b2b9-1e2462791789",
+    "requested_at": "2026-10-17T16:02:25.732545+00:00"
+  },
+  "authenticated_browser_session": false,
+  "booking_uid_sha256": "d52475efa685ac8b8451cc710944f5ec49edefaed5f5aa9b3c1eb5ed27f2bda0",
+  "html_language": "es",
+  "spanish_label_visible": true,
+  "previous_english_label_present": false,
+  "expected_label": "Motivo de cancelación (opcional)",
+  "pass": true,
+  "cleanup_remaining": 0
+}
