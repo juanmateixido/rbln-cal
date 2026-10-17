@@ -2,14 +2,11 @@ FROM --platform=$BUILDPLATFORM node:20 AS builder
 
 WORKDIR /calcom
 
-## If we want to read any ENV variable from .env file, we need to first accept and pass it as an argument to the Dockerfile
+# Runtime credentials must never become build arguments or image metadata.
 ARG NEXT_PUBLIC_LICENSE_CONSENT
 ARG NEXT_PUBLIC_WEBSITE_TERMS_URL
 ARG NEXT_PUBLIC_WEBSITE_PRIVACY_POLICY_URL
 ARG CALCOM_TELEMETRY_DISABLED
-ARG DATABASE_URL
-ARG NEXTAUTH_SECRET=secret
-ARG CALENDSO_ENCRYPTION_KEY=secret
 ARG MAX_OLD_SPACE_SIZE=6144
 ARG NEXT_PUBLIC_API_V2_URL
 ARG NEXT_PUBLIC_APP_NAME=Cal.diy
@@ -26,10 +23,6 @@ ENV NEXT_PUBLIC_WEBAPP_URL=http://NEXT_PUBLIC_WEBAPP_URL_PLACEHOLDER \
   NEXT_PUBLIC_WEBSITE_TERMS_URL=$NEXT_PUBLIC_WEBSITE_TERMS_URL \
   NEXT_PUBLIC_WEBSITE_PRIVACY_POLICY_URL=$NEXT_PUBLIC_WEBSITE_PRIVACY_POLICY_URL \
   CALCOM_TELEMETRY_DISABLED=$CALCOM_TELEMETRY_DISABLED \
-  DATABASE_URL=$DATABASE_URL \
-  DATABASE_DIRECT_URL=$DATABASE_URL \
-  NEXTAUTH_SECRET=${NEXTAUTH_SECRET} \
-  CALENDSO_ENCRYPTION_KEY=${CALENDSO_ENCRYPTION_KEY} \
   NEXT_PUBLIC_SINGLE_ORG_SLUG=$NEXT_PUBLIC_SINGLE_ORG_SLUG \
   ORGANIZATIONS_ENABLED=$ORGANIZATIONS_ENABLED \
   NODE_OPTIONS=--max-old-space-size=${MAX_OLD_SPACE_SIZE} \
@@ -44,12 +37,12 @@ COPY packages ./packages
 
 RUN yarn config set httpTimeout 1200000
 RUN npx turbo prune --scope=@calcom/web --scope=@calcom/trpc --docker
-RUN yarn install
+RUN --mount=type=secret,id=rbln_build_fixtures,required=true . /run/secrets/rbln_build_fixtures && yarn install
 # Build and make embed servable from web/public/embed folder
-RUN yarn workspace @calcom/trpc run build
-RUN yarn --cwd packages/embeds/embed-core workspace @calcom/embed-core run build
-RUN yarn --cwd apps/web workspace @calcom/web run copy-app-store-static
-RUN yarn --cwd apps/web workspace @calcom/web run build
+RUN --mount=type=secret,id=rbln_build_fixtures,required=true . /run/secrets/rbln_build_fixtures && yarn workspace @calcom/trpc run build
+RUN --mount=type=secret,id=rbln_build_fixtures,required=true . /run/secrets/rbln_build_fixtures && yarn --cwd packages/embeds/embed-core workspace @calcom/embed-core run build
+RUN --mount=type=secret,id=rbln_build_fixtures,required=true . /run/secrets/rbln_build_fixtures && yarn --cwd apps/web workspace @calcom/web run copy-app-store-static
+RUN --mount=type=secret,id=rbln_build_fixtures,required=true . /run/secrets/rbln_build_fixtures && yarn --cwd apps/web workspace @calcom/web run build
 RUN rm -rf node_modules/.cache .yarn/cache apps/web/.next/cache
 
 FROM node:20 AS builder-two

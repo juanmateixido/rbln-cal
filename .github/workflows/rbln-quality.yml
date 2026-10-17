@@ -25,6 +25,7 @@ jobs:
           node-version: '24'
       - run: |
           python3 deploy/test-sync-vars.py
+          python3 deploy/test-public-image.py
           bash -n deploy/sync-vars.sh rbln/wizard-juanma.sh
           rbln/wizard-juanma.sh --dry-run
           for script in scripts/rbln/*.cjs; do node --check "$script"; done
@@ -50,11 +51,10 @@ jobs:
       - name: Full pinned-source type check in its built API image
         env:
           REQUESTED_IMAGE: ${{ inputs.api_image }}
-          RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
-          RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+          IMAGE_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           set -euo pipefail
-          image=${REQUESTED_IMAGE:-ghcr.io/juanmateixido/rbln-cal-api:diy-54343aa-rbln.$RUN_NUMBER-$RUN_ATTEMPT}
+          image=${REQUESTED_IMAGE:-ghcr.io/juanmateixido/rbln-cal-api:sha-$IMAGE_SHA}
           case "$image" in ghcr.io/juanmateixido/rbln-cal-api:*) ;; ghcr.io/juanmateixido/rbln-cal-api@sha256:*) ;; *) exit 2 ;; esac
           docker pull "$image"
           docker run --rm -e NODE_OPTIONS=--max-old-space-size=6144 \

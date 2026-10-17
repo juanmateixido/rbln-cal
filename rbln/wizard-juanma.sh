@@ -187,10 +187,20 @@ root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 reader="$HOME/.config/infisical/leer.py"
 writer="$HOME/.config/infisical/cargar.py"
 ENV_FILE=/dev/null
+open_for_juanma() {
+  python3 - "$1" <<'PYOPEN'
+import shlex,subprocess,sys
+url=sys.argv[1]
+subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=10','juanma@100.78.9.89',
+                '/usr/bin/open '+shlex.quote(url)],check=True)
+PYOPEN
+}
 case "${1:---dry-run}" in
   --dry-run)
     printf '%s\n' \
       'SECO: no abre navegador, no lee secretos, no despliega y no envía correos.' \
+      'PREVIO, --images sha-<commit>: Juanma hace públicos ambos paquetes GHCR; verifica acceso anónimo a manifest/config/todas las capas.' \
+      '   No requiere Giuli, no activa SMTP ni solicita token. Todo sigue en captura y BOOKING_MODE off.' \
       '1. Juanma: autorizar/publicar OAuth Google; ID y secret a RBLN /cal GOOGLE_API_CREDENTIALS.' \
       '   Automático en GO: sync a rbln-cal, SMTP Mailgun y dominio canónico; esperar deployments sanos.' \
       '2. Giuli leyendo su correo: solicitar reset de un uso/6 h ahora, crear su clave, comprobar que la inicial falla.' \
@@ -198,8 +208,26 @@ case "${1:---dry-run}" in
       '3. Giuli: conectar Google y elegir Pacientes; comprobar calendario destino y conflictos por API.' \
       'DNS se coordina aparte con el orquestador. BOOKING_MODE sigue off.'
     exit 0 ;;
+  --images)
+    [[ "${2:-}" =~ ^sha-[0-9a-f]{40}$ ]] || { printf '%s\n' 'Falta sha-<commit completo aprobado por CI>.' >&2; exit 2; }
+    [[ -t 0 ]] || { printf '%s\n' 'La etapa de visibilidad requiere una terminal humana.' >&2; exit 1; }
+    python3 "$root/deploy/check-public-image.py"
+    if python3 "$root/deploy/check-public-pull.py" "$2"; then exit 0; fi
+    TOTAL_STAGES=1
+    banner 'RBLN Agenda · imágenes públicas, sin activar la agenda'
+    stage 'Juanma: publicar los dos paquetes de GHCR'
+    for app in web api; do
+      open_for_juanma "https://github.com/users/juanmateixido/packages/container/rbln-cal-$app/settings"
+      step "En rbln-cal-$app: Danger Zone → Change visibility → Public; confirmá el nombre del paquete si GitHub lo pide."
+      pause "Cuando rbln-cal-$app sea público, presioná Enter."
+    done
+    python3 "$root/deploy/check-public-pull.py" "$2"
+    note 'Verificados anónimamente manifest, config y acceso HEAD a todas las capas; sin descargar la imagen en bee.'
+    note 'SMTP permanece en captura. BOOKING_MODE off. No se abrió ninguna sesión de Giuliana.'
+    finish
+    exit 0 ;;
   --go) ;;
-  *) printf '%s\n' 'Uso: rbln/wizard-juanma.sh [--dry-run|--go]' >&2; exit 2 ;;
+  *) printf '%s\n' 'Uso: rbln/wizard-juanma.sh [--dry-run|--images sha-<commit>|--go]' >&2; exit 2 ;;
 esac
 [[ -t 0 ]] || { printf '%s\n' 'El GO requiere una terminal humana.' >&2; exit 1; }
 confirm '¿Juanma dio GO y Giuliana está disponible para leer su correo y conectar Google ahora?' || exit 1
@@ -212,7 +240,7 @@ node -e 'require(process.env.PLAYWRIGHT_MODULE || "playwright")' >/dev/null
 banner 'RBLN Agenda · GO con Juanma y Giuliana'
 
 stage 'Juanma: app OAuth propia de Google'
-open_url 'https://console.cloud.google.com/auth/overview'
+open_for_juanma 'https://console.cloud.google.com/auth/overview'
 step 'Seleccioná el proyecto propio de RBLN. Google Auth Platform → Branding: RBLN Agenda y dominio rebelion.training.'
 step 'Audience: elegí el público aplicable; si es External, publicá In production para evitar tokens de prueba de 7 días.'
 step 'Data Access: userinfo.profile, calendar.events y calendar.readonly; completá verificación si Google la exige.'
@@ -248,9 +276,9 @@ python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_ADMIN_EMAIL CAL
 note 'La inicial ya no inicia sesión. Queda evidencia para secrets-vault; el wizard no borra la clave.'
 
 stage 'Giuli: conectar Google Calendar y elegir Pacientes'
-open_url 'https://agenda.rebelion.training/apps/google-calendar'
+open_for_juanma 'https://agenda.rebelion.training/apps/google-calendar'
 step 'Iniciá sesión con tu nueva clave, conectá tu cuenta Google y autorizá los permisos de Calendar.'
-open_url 'https://agenda.rebelion.training/settings/my-account/calendars'
+open_for_juanma 'https://agenda.rebelion.training/settings/my-account/calendars'
 step 'Elegí Pacientes como calendario donde se crean las reservas y marcá los calendarios que bloquean disponibilidad.'
 pause 'Cuando Pacientes esté seleccionado, presioná Enter para verificarlo automáticamente.'
 python3 "$reader" RBLN /cal NEXT_PUBLIC_WEBAPP_URL SMTP_MODE CAL_API_URL CAL_API_KEY_CRM -- \

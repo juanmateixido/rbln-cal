@@ -42,3 +42,33 @@ de un SHA concreto y revisado de `cal.diy main`, nunca de aquellos tags.
   Mailgun ni se ejecuta el wizard de Google sin GO.
 - [Wizard único del GO](rbln/wizard-juanma.sh): `--dry-run` sin efectos;
   OAuth, reset de Giuli con rechazo verificado de la inicial y calendario.
+
+## Imagen pública
+
+GHCR publica `ghcr.io/juanmateixido/rbln-cal-web` y `rbln-cal-api` con el
+`GITHUB_TOKEN` efímero del workflow (`packages: write`), sin PAT personal.
+Cada imagen nueva lleva `sha-<commit completo>`; la CI rechaza sobrescribir
+ese tag. Railway usa el digest asociado, nunca `latest`.
+
+Se hornean código MIT, dependencias, recursos, URLs/nombre `NEXT_PUBLIC_*`
+y configuración pública de compilación. Ningún valor de Infisical llega al
+builder. Las variables privadas solo entran al contenedor en ejecución mediante
+`deploy/sync-vars.sh`. `.dockerignore` excluye archivos `.env`, claves locales
+y evidencia de sesiones.
+
+Cal necesita algunas variables durante la compilación. `deploy/build-fixtures.sh`
+contiene únicamente literales públicos de CI: PostgreSQL efímero sin contraseña
+y rellenos sin acceso a ningún entorno. BuildKit los monta temporalmente, sin
+ARG/ENV persistidos. No son credenciales de Railway ni se leen de Infisical.
+
+`deploy/check-public-image.py` bloquea argumentos privados, acceso a Infisical
+desde el workflow, cambios en esos fixtures y nombres privados en
+`docker history --no-trunc` / entorno final. Usa un snapshot de nombres de
+`RBLN /cal` y del puente `/crm`, con excepciones explícitas para configuración
+pública; también rechaza nombres nuevos de tokens/secretos. No imprime valores.
+Este control complementa la revisión: no detecta todo secreto arbitrario que
+alguien incrustara en un archivo de código.
+
+La visibilidad pública de ambos paquetes se verifica sin login. Si requiere
+intervención, está agrupada en el wizard; no se crea token `read:packages`.
+Una futura imagen privada requeriría una decisión nueva y token vía wizard.

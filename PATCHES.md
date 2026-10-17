@@ -17,11 +17,16 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   upstream. [Prueba y gate de despliegue](rbln/evidence/api-log-redaction.md).
 - P-01 — `.github/workflows/image.yml`: construye web y API v2 solo en GitHub
   Actions, prueba migraciones/arranque y publica imágenes GHCR con etiqueta
-  `diy-54343aa-rbln.<run_number>-<run_attempt>` y revisión OCI. Sin credenciales de
+  `sha-<commit completo>` y revisión OCI. Sin credenciales de
   producción en CI. Las cadenas `ci-only` son rellenos de un entorno efímero sin
   autenticación de Postgres; no son credenciales desplegadas.
 - P-02 — `Dockerfile`: expone `NEXT_PUBLIC_APP_NAME` al build para configurar
   «RBLN Agenda» sin modificar la lógica de marca.
+- Imagen pública — ambos Dockerfiles eliminan ARG/ENV de credenciales.
+  BuildKit monta únicamente los fixtures públicos de `deploy/build-fixtures.sh`.
+  `deploy/check-public-image.py` bloquea nombres privados en build-args, historial
+  y entorno final; `.dockerignore` excluye configuración local. La CI no lee
+  Infisical y publica exclusivamente con `GITHUB_TOKEN`, sin sobrescribir tags SHA.
 
 No se ha cambiado el locale por defecto. Primero se configura usuario `es` e
 `interfaceLanguage: "es"`; cualquier parche de idioma o de PoweredBy requiere
