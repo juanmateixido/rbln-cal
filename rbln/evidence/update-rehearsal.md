@@ -89,3 +89,10 @@ volumen pueden seguir listados durante la [retención de eliminación de hasta
 48 horas de Railway](https://docs.railway.com/volumes/reference); esto no es un
 entorno activo ni una cuenta accesible. La contraseña inicial ya fue rechazada
 antes de eliminarlo. No se afirma una purga física inmediata del proveedor.
+
+Para el próximo ensayo se **recrea desde cero**, no se enciende ni restaura este
+entorno: [procedimiento de recreación](../../deploy/railway.md#recrear-el-ensayo-desde-cero).
+El runbook se cotejó con los pasos reales e incorpora creación de entorno vacío,
+servicios, volúmenes, dominios, variables aisladas, orden de migración, fixture,
+clave independiente, webhook y T0. La comprobación fue documental; no se volvió
+a desplegar otro ensayo.

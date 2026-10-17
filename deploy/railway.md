@@ -187,6 +187,72 @@ catálogo de secrets-vault, con copia a ambos orquestadores.
    Solo entonces actualizar producción. No activar `BOOKING_MODE` como efecto
    colateral de una actualización.
 
+### Recrear el ensayo desde cero
+
+El entorno del 17/10 **se borró, no se dejó apagado**. No restaurar sus volúmenes
+ni reutilizar sus UUID. Esta secuencia reproduce el aprovisionamiento comprobado:
+
+1. Con `leer.py RBLN /railway RAILWAY_API_TOKEN -- <proceso>`, usar GraphQL
+   `environmentCreate(input:{projectId,name:"update-rehearsal-<fecha>"})`, sin
+   `sourceEnvironmentId`. Leer el ID nuevo y exigir que difiera de `production`.
+   Crear cinco servicios por `serviceCreate` con `projectId`, ese `environmentId`
+   y nombres `rehearsal-postgres`, `rehearsal-redis`, `rehearsal-web`,
+   `rehearsal-api`, `rehearsal-sink`. Guardar solo IDs, nombres y dominios.
+2. `volumeCreate` con `projectId`, `environmentId`, `serviceId` y `mountPath`:
+   Postgres `/var/lib/postgresql/data`, Redis `/data`. Crear dominios por
+   `serviceDomainCreate` para web 3000, API 5555 y sink 8080. No copiar volúmenes,
+   usuarios, sesiones ni dumps de producción.
+3. Usar `deploy/sync-vars.py:collections()` como lista de variables y la misma
+   cadena de lectores Viewer de `deploy/sync-vars.sh`. **No ejecutar el sync
+   productivo sin adaptar el destino**: sus IDs de Infisical son productivos.
+   En memoria, sustituir todos los IDs de servicio/entorno y estas conexiones:
+   - Web/API: `DATABASE_URL` y `DATABASE_DIRECT_URL` =
+     `postgresql://postgres:${{rehearsal-postgres.POSTGRES_PASSWORD}}@rehearsal-postgres.railway.internal:5432/calendso`;
+     `DATABASE_HOST=rehearsal-postgres.railway.internal`.
+   - API: `DATABASE_READ_URL` y `DATABASE_WRITE_URL` iguales a la DB anterior;
+     `REDIS_URL=redis://:${{rehearsal-redis.REDIS_PASSWORD}}@rehearsal-redis.railway.internal:6379`.
+   - Web/API: `NEXT_PUBLIC_WEBAPP_URL` y `NEXTAUTH_URL` al dominio nuevo de web,
+     `NEXT_PUBLIC_API_V2_URL` al dominio nuevo de API + `/v2`; API `API_URL`
+     al mismo dominio sin `/v2`.
+   - SMTP exclusivamente `rehearsal-sink.railway.internal:1025`, usuario/clave
+     vacíos; eliminar `GOOGLE_API_CREDENTIALS`. Conservar guardas de logging.
+   Enviar colecciones por `variableCollectionUpsert`, `skipDeploys:true`,
+   `replace:true` únicamente sobre los servicios nuevos y vacíos. Valores solo
+   en memoria/stdin de curl, nunca archivos ni argumentos de proceso.
+4. Configurar `serviceInstanceUpdate`: Postgres `postgres:16-alpine`, Redis
+   `redis:7-alpine` con AOF y `requirepass` leído de `REDIS_PASSWORD` al arrancar.
+   El sink usa `python:3.11-alpine` y ejecuta el contenido versionado de
+   `deploy/t0-sink.py` (puede pasarse como código base64 público en startCommand),
+   con `/health` y puerto 8080. Arrancar infraestructura por
+   `serviceInstanceDeployV2`; esperar SUCCESS antes de web/API.
+5. Poner los dos digests del merge ensayado en `source.image`, nunca los tags
+   mutables. Arrancar API con `preDeployCommand:["yarn prisma migrate deploy"]`,
+   `/health`, puerto 5555; esperar SUCCESS y salud 200. Retirar ese comando,
+   arrancar web con `/api/auth/csrf`, puerto 3000 y verificar 200. Así nunca
+   corren dos migradores a la vez. Comprobar marcadores ficticios en logs antes
+   de abrir una sesión o crear una clave real de ensayo.
+6. Crear la cuenta fixture por `/auth/setup` con Playwright local y registro de
+   sesiones. Crear la clave desde la interfaz y guardarla como
+   `RBLN /cal REHEARSAL_API_KEY`, avisando al catálogo. Nunca reutilizar la clave
+   CRM. El ensayo del 17/10 usó la inicial de bootstrap; para un ensayo nuevo,
+   preferir una contraseña aleatoria independiente guardada temporalmente en
+   Infisical y registrada en el catálogo, con baja autorizada al cerrar.
+7. Por API, crear un horario de prueba (`POST /v2/schedules`, versión 2024-06-11,
+   Asunción, lunes a viernes 10–20) y un único tipo oculto con autenticación,
+   45 min, confirmación always y `blockUnconfirmedBookingsInBooker:true`,
+   ubicación presencial de ensayo y ambos flags de cambios false. Crear webhook
+   activo hacia el sink nuevo con los cinco triggers de T0 y versión 2021-10-20.
+   Adaptar la guardia de origen y el archivo de salida de `scripts/rbln/t0-api.py`
+   en una copia temporal; mantener todas las aserciones/finally y pasar la clave
+   de ensayo como `CAL_API_KEY` solo al proceso. No sobrescribir T0 productivo.
+8. Repetir T0, registrar SHA/digests/IDs y resultados sanitizados; cerrar siguiendo
+   la lista de abajo. No habilitar Google, correo real ni BOOKING_MODE.
+
+La secuencia y los nombres se cotejaron con los scripts de aprovisionamiento y
+las respuestas GraphQL del ensayo completado (`update-rehearsal-deployment.json`
+y `update-rehearsal-runtime.json`). Se verificó documentación, sin crear un
+segundo entorno ni cargar nuevas claves para probar el runbook.
+
 Cierre obligatorio del ensayo: revocar su API key en Cal y verificar 401; borrar
 `RBLN /cal REHEARSAL_API_KEY` de Infisical y avisar a secrets-vault para retirar
 el nombre del catálogo. Si la cuenta fixture usó la clave inicial de bootstrap,
