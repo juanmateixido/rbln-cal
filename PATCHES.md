@@ -33,3 +33,11 @@ un fallo reproducible de T0 y una entrada en este archivo.
    aprobar el ensayo. Rollback y restauración se detallan en `deploy/railway.md`.
 
 El baseline continúa anclado aunque se publique una nueva revisión upstream.
+
+- P-03 — `deploy/sync-vars.sh` y `deploy/sync-vars.py`: réplica explícita desde
+  Infisical usando solo `bee-lector` (`leer.py`), `skipDeploys: true` y una
+  activación final por servicio. El sync formal de Infisical queda pendiente no
+  bloqueante de secrets-vault; no se usa ninguna credencial Admin.
+- P-06 — `deploy/t0-sink.py`: receptor efímero de correo/webhooks para T0, sin
+  envíos SMTP salientes, sin persistencia ni registros de payloads. Lectura de
+  capturas autenticada; webhook autenticado con HMAC sobre bytes crudos.
