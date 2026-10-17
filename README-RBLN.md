@@ -13,6 +13,19 @@ contiene `apps/api/v2/src/ee` bajo licencia comercial y una consulta de licencia
 que corta la autenticación por API key. Las actualizaciones de este fork parten
 de un SHA concreto y revisado de `cal.diy main`, nunca de aquellos tags.
 
+## Parches sobre upstream
+
+- Redacción de encabezados en `apps/api/v2/src/lib/filterReqHeaders.ts`. En
+  `54343aa`, línea 6, el helper devuelve Authorization completo y
+  `apps/api/v2/src/filters/http-exception.filter.ts:21` lo envía al log.
+  El parche conserva los metadatos permitidos y reemplaza credenciales por
+  `[REDACTED]`, sin modificar la petición ni la autenticación. Sus pruebas
+  deben conservarse en cada actualización, incluido el sync de `840949a1e1`.
+  La prueba HTTP antes/después sigue siendo condición para crear la primera
+  API key o abrir una sesión de Giuliana; ver [evidencia](rbln/evidence/api-log-redaction.md).
+- Pendiente después del lanzamiento: Juanma decide si reportar este hallazgo
+  a `calcom/cal.diy`. No se abre issue ni PR upstream ni se contacta al proyecto.
+
 ## Operación
 
 - [Parches y procedimiento de actualización](PATCHES.md).

@@ -6,6 +6,15 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
 
 ## Cambios propios
 
+- Seguridad — `apps/api/v2/src/lib/filterReqHeaders.ts` y su `.spec.ts`:
+  redacta `authorization`, `cookie` y todo `x-*` con `key`, `secret` o `token`,
+  sin distinguir mayúsculas. Mantiene la lista permitida de otros encabezados
+  y no muta la petición. Corrige la exposición de Authorization en el ancla.
+  Consumidor: `apps/api/v2/src/filters/http-exception.filter.ts:21`; también
+  lo usan los filtros Prisma, tRPC, Zod y CalendarService del mismo directorio.
+  Excepción de seguridad aprobada para T0a, con PR separado hacia `rbln` y
+  revisión de Sol gestionada por el orquestador. Preservar en todo merge de
+  upstream. [Prueba y gate de despliegue](rbln/evidence/api-log-redaction.md).
 - P-01 — `.github/workflows/image.yml`: construye web y API v2 solo en GitHub
   Actions, prueba migraciones/arranque y publica imágenes GHCR con etiqueta
   `diy-54343aa-rbln.<run_number>-<run_attempt>` y revisión OCI. Sin credenciales de

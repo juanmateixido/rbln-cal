@@ -1,9 +1,8 @@
-import { IncomingHttpHeaders } from "node:http";
+import type { IncomingHttpHeaders } from "node:http";
 
 export function filterReqHeaders(headers: IncomingHttpHeaders): Partial<IncomingHttpHeaders> {
   return {
     "Content-Type": headers["Content-Type"] ?? headers["content-type"],
-    Authorization: headers["Authorization"] ?? headers["authorization"],
     "X-Cal-Client-Id": headers["X-Cal-Client-Id"] ?? headers["x-cal-client-id"],
     "Cal-Api-Version": headers["Cal-Api-Version"] ?? headers["cal-api-version"],
     "X-Request-Id": headers["X-Request-Id"] ?? headers["x-request-id"],
@@ -17,5 +16,10 @@ export function filterReqHeaders(headers: IncomingHttpHeaders): Partial<Incoming
     "X-Vercel-Country": headers["x-vercel-country"],
     "X-Vercel-Region": headers["x-vercel-region"],
     Host: headers["Host"] ?? headers["host"],
+    ...Object.fromEntries(
+      Object.keys(headers)
+        .filter((name) => /^(authorization|cookie)$|^x-.*(key|secret|token)/i.test(name))
+        .map((name) => [name, "[REDACTED]"])
+    ),
   };
 }
