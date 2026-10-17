@@ -139,7 +139,7 @@ export class StripeController {
       return await this.stripeService.saveStripeAccount(decodedCallbackState, code, userId);
     } catch (error) {
       if (error instanceof Error) {
-        console.error(error.message);
+        console.error("Stripe OAuth callback failed", { errorType: error.name });
       }
       return {
         url: decodedCallbackState.onErrorReturnTo ?? "",

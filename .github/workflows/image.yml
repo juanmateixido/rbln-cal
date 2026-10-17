@@ -81,7 +81,7 @@ jobs:
         run: python3 deploy/check-public-image.py --image "$IMAGE:$TAG"
       - name: Test request header redaction in the API image
         if: matrix.app == 'api' && hashFiles('apps/api/v2/src/lib/filterReqHeaders.spec.ts') != ''
-        run: docker run --rm "$IMAGE:$TAG" yarn workspace @calcom/api-v2 exec jest src/lib/filterReqHeaders.spec.ts --runInBand
+        run: docker run --rm "$IMAGE:$TAG" yarn workspace @calcom/api-v2 exec jest src/lib/filterReqHeaders.spec.ts src/filters/http-exception.filter.spec.ts --runInBand
       - name: Smoke test migrations and HTTP startup
         env:
           APP: ${{ matrix.app }}
@@ -102,7 +102,9 @@ jobs:
             -e API_PORT=5555 -e API_URL=http://127.0.0.1:5555 \
             -e NEXTAUTH_URL=http://127.0.0.1:3000 -e NEXT_PUBLIC_WEBAPP_URL=http://127.0.0.1:3000 \
             -e CALCOM_TELEMETRY_DISABLED=1 -e ENABLE_ASYNC_TASKER=0 \
+            -e LOG_LEVEL=warn -e NEXTAUTH_DEBUG= -e NEXT_PUBLIC_LOGGER_LEVEL=4 \
             "$IMAGE:$TAG"
+          docker exec smoke node scripts/rbln/check-log-policy.cjs "$APP"
           for attempt in $(seq 1 90); do
             status=$(curl -s -L --max-redirs 3 --max-time 10 -o /dev/null -w '%{http_code}' "http://127.0.0.1:$HTTP_PORT$HEALTH" || true)
             if [ "$status" = 200 ]; then exit 0; fi

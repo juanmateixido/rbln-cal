@@ -1,10 +1,9 @@
-import { extractUserContext } from "@/lib/extract-user-context";
-import { filterReqHeaders } from "@/lib/filterReqHeaders";
-import { ArgumentsHost, Catch, ExceptionFilter, HttpException, Logger } from "@nestjs/common";
-import { Request } from "express";
-
 import { ERROR_STATUS } from "@calcom/platform-constants";
 import { Response } from "@calcom/platform-types";
+import { ArgumentsHost, Catch, ExceptionFilter, HttpException, Logger } from "@nestjs/common";
+import { Request } from "express";
+import { extractUserContext } from "@/lib/extract-user-context";
+import { filterReqHeaders } from "@/lib/filterReqHeaders";
 
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
@@ -15,14 +14,15 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
     const statusCode = exception.getStatus();
-    const requestId = request.headers["X-Request-Id"] ?? "unknown-request-id";
-    response.setHeader("X-Request-Id", requestId.toString());
-    const userContext = extractUserContext(request);
-    this.logger.error(`Http Exception Filter: ${exception?.message}`, {
-      exception,
-      body: request.body,
+    const requestId =
+      request.headers["X-Request-Id"] ?? request.headers["x-request-id"] ?? "unknown-request-id";
+    response.setHeader("X-Request-Id", (request.headers["X-Request-Id"] ?? "unknown-request-id").toString());
+    const { userEmail: _userEmail, ...userContext } = extractUserContext(request);
+    this.logger.error("Http Exception Filter", {
+      errorType: exception.name,
+      statusCode,
       headers: filterReqHeaders(request.headers),
-      url: request.url,
+      url: request.path,
       method: request.method,
       requestId,
       ...userContext,

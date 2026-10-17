@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-17T14:27:15.545619+00:00",
+  "scope": "Unpatched API startup and synthetic 404 only; no bookings or user sessions",
+  "deployment": "8a7c48e6-3087-42bb-8024-cc12ddb97379",
+  "health_path": "/health",
+  "health_http": 200,
+  "memory": [
+    {
+      "measurement": "MEMORY_USAGE_GB",
+      "samples": 9,
+      "maximum": 0.733495296,
+      "first_ts": 1792246950,
+      "last_ts": 1792247190
+    },
+    {
+      "measurement": "MEMORY_LIMIT_GB",
+      "samples": 9,
+      "maximum": 24,
+      "first_ts": 1792246950,
+      "last_ts": 1792247190
+    }
+  ]
+}

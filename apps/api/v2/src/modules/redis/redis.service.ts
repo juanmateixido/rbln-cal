@@ -39,7 +39,13 @@ export class RedisService implements OnModuleDestroy {
     try {
       await this.redis.quit();
     } catch (err) {
-      this.logger.error(err);
+      this.logger.error("Redis shutdown failed", {
+        errorType: err instanceof Error ? err.name : typeof err,
+        code:
+          err && typeof err === "object" && "code" in err && typeof err.code === "string"
+            ? err.code
+            : undefined,
+      });
     }
   }
 
