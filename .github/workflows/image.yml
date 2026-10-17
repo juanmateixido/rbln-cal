@@ -2,7 +2,7 @@ name: RBLN images
 on:
   push:
     branches: [rbln]
-    paths-ignore: ['**/*.md']
+    paths: ['Dockerfile', 'apps/**', 'packages/**', 'scripts/start.sh', 'scripts/seed-app-store.ts', 'package.json', 'yarn.lock', '.yarn/**', '.github/workflows/image.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
           - app: api
             dockerfile: apps/api/v2/Dockerfile
             port: 5555
-            health: /v2/health
+            health: /health
     services:
       postgres:
         image: postgres:16-alpine
