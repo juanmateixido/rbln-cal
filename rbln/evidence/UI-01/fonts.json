@@ -1,0 +1,26 @@
+[
+  {
+    "file": "apps/web/fonts/rbln/Geist-OFL.txt",
+    "bytes": 4383,
+    "sha256": "942560b236adfa83745b2c64e5fc09ebaf91cb331751b1157eb92187e5d6e930",
+    "matchesApprovedCRMAsset": true
+  },
+  {
+    "file": "apps/web/fonts/rbln/Geist-Variable.woff2",
+    "bytes": 29400,
+    "sha256": "19f9c92546aa300c312235e3125af1b81394d8db9a4bc4a425cd5b641d2d54e1",
+    "matchesApprovedCRMAsset": true
+  },
+  {
+    "file": "apps/web/fonts/rbln/Manrope-700.ttf",
+    "bytes": 94928,
+    "sha256": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8",
+    "matchesApprovedCRMAsset": true
+  },
+  {
+    "file": "apps/web/fonts/rbln/Manrope-OFL.txt",
+    "bytes": 4386,
+    "sha256": "d6a309fcfb963d329a93baf9df66fa5f3c23a4be2b5f67edf24d6cafecde12ac",
+    "matchesApprovedCRMAsset": true
+  }
+]

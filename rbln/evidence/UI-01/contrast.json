@@ -1,0 +1,50 @@
+[
+  {
+    "use": "Texto / fondo",
+    "foreground": "#FFFFFF",
+    "background": "#0A0A12",
+    "ratio": 19.72
+  },
+  {
+    "use": "Texto / superficie",
+    "foreground": "#FFFFFF",
+    "background": "#1E1E29",
+    "ratio": 16.5
+  },
+  {
+    "use": "Secundario / superficie",
+    "foreground": "#A0A1A8",
+    "background": "#1E1E29",
+    "ratio": 6.41
+  },
+  {
+    "use": "CTA normal",
+    "foreground": "#050A17",
+    "background": "#FF8FD0",
+    "ratio": 9.5
+  },
+  {
+    "use": "CTA hover",
+    "foreground": "#050A17",
+    "background": "#F973C1",
+    "ratio": 7.77
+  },
+  {
+    "use": "CTA active",
+    "foreground": "#050A17",
+    "background": "#EC5DB0",
+    "ratio": 6.36
+  },
+  {
+    "use": "Foco / superficie",
+    "foreground": "#DCFF6E",
+    "background": "#1E1E29",
+    "ratio": 14.59
+  },
+  {
+    "use": "Borde campo / fondo",
+    "foreground": "#A0A1A8",
+    "background": "#0A0A12",
+    "ratio": 7.66
+  }
+]

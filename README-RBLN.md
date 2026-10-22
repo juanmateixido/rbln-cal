@@ -99,6 +99,13 @@ También queda riesgo residual de URL con query en logs **de error**, que
 La guarda de nivel no los elimina. Por decisión del orquestador, siguen sin
 parche web en v1; tratar los logs como sensibles y no asumir que warn los sanea.
 
+## Tema Rebelión
+
+UI-01 añade el registro oscuro v3 con Geist y Manrope 700 locales, sin
+reescribir componentes. [Alcance, capturas, validación y pasos pendientes de
+operación](rbln/theme/README.md). Preservar el CSS, su importación y los loaders
+al actualizar upstream; lista exacta en [PATCHES.md](PATCHES.md).
+
 ## Operación
 
 P-05: diez tipos ocultos y autenticados, mapa estable en

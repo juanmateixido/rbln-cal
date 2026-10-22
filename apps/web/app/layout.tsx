@@ -3,7 +3,6 @@ import { loadTranslations } from "@calcom/i18n/server";
 import { IconSprites } from "@calcom/ui/components/icon";
 import { buildLegacyRequest } from "@lib/buildLegacyCtx";
 import { dir } from "i18next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { cookies, headers } from "next/headers";
 import Script from "next/script";
@@ -14,13 +13,19 @@ import { AppRouterI18nProvider } from "./AppRouterI18nProvider";
 import { Providers } from "./providers";
 import { SpeculationRules } from "./SpeculationRules";
 
-const interFont = Inter({ subsets: ["latin"], variable: "--font-sans", preload: true, display: "swap" });
-const calFont = localFont({
-  src: "../fonts/CalSans-SemiBold.woff2",
+const geistFont = localFont({
+  src: "../fonts/rbln/Geist-Variable.woff2",
+  variable: "--font-sans",
+  preload: true,
+  display: "swap",
+  weight: "100 900",
+});
+const manropeFont = localFont({
+  src: "../fonts/rbln/Manrope-700.ttf",
   variable: "--font-cal",
   preload: true,
-  display: "block",
-  weight: "600",
+  display: "swap",
+  weight: "700",
 });
 
 export const viewport = {
@@ -32,11 +37,11 @@ export const viewport = {
   themeColor: [
     {
       media: "(prefers-color-scheme: light)",
-      color: "#f9fafb",
+      color: "#0A0A12",
     },
     {
       media: "(prefers-color-scheme: dark)",
-      color: "#1C1C1C",
+      color: "#0A0A12",
     },
   ],
 };
@@ -116,8 +121,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head nonce={nonce}>
         <style>{`
           :root {
-            --font-sans: ${interFont.style.fontFamily.replace(/\'/g, "")}, system-ui;
-            --font-cal: ${calFont.style.fontFamily.replace(/\'/g, "")};
+            --font-sans: ${geistFont.style.fontFamily.replace(/\'/g, "")}, system-ui;
+            --font-cal: ${manropeFont.style.fontFamily.replace(/\'/g, "")};
           }
         `}</style>
         {process.env.NODE_ENV === "development" && (
@@ -151,13 +156,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <IconSprites />
         <SpeculationRules
           // URLs In Navigation
-          prerenderPathsOnHover={[
-            "/event-types",
-            "/availability",
-            "/bookings/upcoming",
-            "/teams",
-            "/apps",
-          ]}
+          prerenderPathsOnHover={["/event-types", "/availability", "/bookings/upcoming", "/teams", "/apps"]}
         />
 
         <Providers isEmbed={isEmbed} nonce={nonce} country={country}>
