@@ -1,0 +1,148 @@
+/* RBLN UI-01: dark v3 palette for this single-brand instance (see PATCHES.md). */
+:root:root,
+.light.light,
+.dark.dark {
+  color-scheme: dark;
+  --rbln-bg: #0a0a12;
+  --rbln-surface: #1e1e29;
+  --rbln-line: #2e2e34;
+  --rbln-lime: #dcff6e;
+  --rbln-rose: #ff8fd0;
+  --rbln-brand: #ff007a;
+  --font-heading: var(--font-cal);
+  --cal-bg: var(--rbln-surface);
+  --cal-bg-subtle: var(--rbln-bg);
+  --cal-bg-muted: var(--rbln-bg);
+  --cal-bg-emphasis: var(--rbln-line);
+  --cal-bg-inverted: #ffffff;
+  --cal-bg-primary: var(--rbln-rose);
+  --cal-bg-primary-emphasis: #f973c1;
+  --cal-bg-primary-muted: #4d1a38;
+  --cal-bg-brand: var(--rbln-rose);
+  --cal-bg-brand-emphasis: #f973c1;
+  --cal-bg-brand-muted: #4d1a38;
+  --cal-border: var(--rbln-line);
+  --cal-border-subtle: var(--rbln-line);
+  --cal-border-muted: var(--rbln-surface);
+  --cal-border-emphasis: #a0a1a8;
+  --cal-text: #ffffff;
+  --cal-text-emphasis: #ffffff;
+  --cal-text-subtle: #a0a1a8;
+  --cal-text-muted: #a0a1a8;
+  --cal-text-inverted: #050a17;
+  /* Keep status messages legible even when Cal selected its light class. */
+  --cal-text-info: #dbeafe;
+  --cal-text-success: #dcfce7;
+  --cal-text-attention: #fef3c7;
+  --cal-text-error: #fca5a5;
+  --cal-bg-info: #253985;
+  --cal-bg-success: #285231;
+  --cal-bg-attention: #73321b;
+  --cal-bg-error: #752522;
+  --cal-text-semantic-info: #93c5fd;
+  --cal-text-semantic-success: #4ade80;
+  --cal-text-semantic-attention: #ffa04d;
+  --cal-text-semantic-error: #fca5a5;
+  --cal-bg-semantic-info-subtle: #040820;
+  --cal-bg-semantic-success-subtle: #064e3b;
+  --cal-bg-semantic-attention-subtle: #271006;
+  --cal-bg-semantic-error-subtle: #230606;
+  --cal-border-semantic-error: #fca5a5;
+  /* Cal escribe estos tokens en style del elemento: mantener la marca global. */
+  --cal-brand: var(--rbln-rose) !important;
+  --cal-brand-emphasis: #f973c1 !important;
+  --cal-brand-subtle: #4d1a38 !important;
+  --cal-brand-text: #050a17 !important;
+  --cal-brand-accent: #050a17 !important;
+  /* COSS UI, usada por los campos y el botón del login actual. */
+  --background: var(--rbln-bg);
+  --foreground: #ffffff;
+  --card: var(--rbln-surface);
+  --card-foreground: #ffffff;
+  --popover: var(--rbln-surface);
+  --popover-foreground: #ffffff;
+  --primary: var(--rbln-rose);
+  --primary-foreground: #050a17;
+  --destructive-foreground: #fca5a5;
+  --info-foreground: #93c5fd;
+  --success-foreground: #4ade80;
+  --warning-foreground: #ffa04d;
+  --secondary: var(--rbln-surface);
+  --secondary-foreground: #ffffff;
+  --muted: var(--rbln-surface);
+  --muted-foreground: #a0a1a8;
+  --accent: var(--rbln-line);
+  --accent-foreground: #ffffff;
+  --border: var(--rbln-line);
+  /* Form boundaries need stronger contrast than decorative dividers. */
+  --input: #a0a1a8;
+  --ring: var(--rbln-lime);
+}
+html,
+body {
+  background: var(--rbln-bg);
+  color: #ffffff;
+}
+body,
+input,
+button,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-cal {
+  font-family: var(--font-cal);
+  font-weight: 700;
+}
+:focus-visible {
+  outline: 2px solid var(--rbln-lime) !important;
+  outline-offset: 3px;
+}
+/* COSS also uses --input as a translucent fill in dark mode. */
+[data-slot="input-control"],
+[data-slot="input-group"],
+[data-slot="textarea-control"] {
+  background: var(--rbln-bg);
+}
+input::placeholder,
+textarea::placeholder {
+  color: #a0a1a8;
+  opacity: 1;
+}
+/* El login usa un botón COSS sin variant primary. */
+[data-testid="login-form"] button[type="submit"] {
+  background: var(--rbln-rose);
+  color: #050a17;
+  border-color: #ff8fd0;
+}
+[data-testid="login-form"] button[type="submit"]:hover {
+  background: #f973c1;
+}
+.min-h-screen:has([data-testid="login-form"]) {
+  background: var(--rbln-bg);
+}
+svg:has(#gridFade) {
+  --grid-fill: #1e1e29 !important;
+  --grid-stroke: #2e2e34 !important;
+}
+
+/* El aviso móvil tiene colores fijos: conservar contraste con el tema global. */
+body:has([data-testid="login-form"]) .fixed.inset-x-0.bottom-0 .text-inverted {
+  color: #ffffff;
+}
+body:has([data-testid="login-form"]) .fixed.inset-x-0.bottom-0 svg.fill-current {
+  color: var(--rbln-lime);
+}
+body:has([data-testid="login-form"]) .fixed.inset-x-0.bottom-0 .shadow-lg {
+  background: var(--rbln-surface) !important;
+}
+
+[data-testid="login-form"] button[type="submit"]:active {
+  background: #ec5db0;
+}

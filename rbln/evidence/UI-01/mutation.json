@@ -1,0 +1,7 @@
+{
+  "mutation": "Replace page background with white",
+  "expected": "Browser background assertion fails",
+  "exitCode": 1,
+  "detected": true,
+  "sourceRestored": true
+}

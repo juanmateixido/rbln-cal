@@ -1,0 +1,344 @@
+{
+  "at": "2026-10-22T23:49:41.408Z",
+  "cssSha256": "65d1da9668a1d7ed9fd98632531c3058ec44444c952018f8b2502b76aacc134b",
+  "method": "Final CSS + local font shim; not a build or deployment",
+  "checks": [
+    {
+      "route": "/giuli",
+      "colorScheme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        },
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "h3"
+              ],
+              [
+                "h4"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/giuli",
+      "colorScheme": "dark",
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        },
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "h3"
+              ],
+              [
+                "h4"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/giuli",
+      "colorScheme": "dark",
+      "inlineBrandOverride": "#ff8fd0"
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [
+        {
+          "background": "rgb(255, 143, 208)",
+          "color": "rgb(5, 10, 23)"
+        }
+      ],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".hover\\:underline"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "dark",
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [
+        {
+          "background": "rgb(255, 143, 208)",
+          "color": "rgb(5, 10, 23)"
+        }
+      ],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".hover\\:underline"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "dark",
+      "inlineBrandOverride": "#ff8fd0"
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "dark",
+      "focus": {
+        "visible": true,
+        "color": "rgb(220, 255, 110)",
+        "width": "2px"
+      }
+    },
+    {
+      "route": "/giuli",
+      "colorScheme": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        },
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "h3"
+              ],
+              [
+                "h4"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/giuli",
+      "colorScheme": "light",
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        },
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "h3"
+              ],
+              [
+                "h4"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/giuli",
+      "colorScheme": "light",
+      "inlineBrandOverride": "#ff8fd0"
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [
+        {
+          "background": "rgb(255, 143, 208)",
+          "color": "rgb(5, 10, 23)"
+        }
+      ],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".hover\\:underline"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "light",
+      "width": 390,
+      "scrollWidth": 390,
+      "background": "rgb(10, 10, 18)",
+      "bodyFont": "\"RBLN Geist\", system-ui",
+      "geist": true,
+      "manrope": true,
+      "headings": [
+        {
+          "font": "\"RBLN Manrope\", system-ui",
+          "weight": "700"
+        }
+      ],
+      "brand": "#ff8fd0",
+      "submit": [
+        {
+          "background": "rgb(255, 143, 208)",
+          "color": "rgb(5, 10, 23)"
+        }
+      ],
+      "contrast": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".hover\\:underline"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "light",
+      "inlineBrandOverride": "#ff8fd0"
+    },
+    {
+      "route": "/auth/login",
+      "colorScheme": "light",
+      "focus": {
+        "visible": true,
+        "color": "rgb(220, 255, 110)",
+        "width": "2px"
+      }
+    }
+  ],
+  "blocked": [],
+  "errors": [],
+  "publicEvent": null
+}

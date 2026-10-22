@@ -107,6 +107,43 @@ PENDING bloquea el tipo propio después de la caché de 2 s y rechaza un segundo
 POST. No bloquea otro tipo del mismo usuario; ACCEPTED sí. La política entre
 tipos corresponde al puente, sin cambio de Cal. Ver T0a/T0b en `rbln/evidence/`.
 
+## UI-01 — tema global Rebelión v3
+
+Divergencia separable: una importación CSS y dos loaders de fuentes locales.
+Fija el registro oscuro incluso si Cal selecciona light/system y prioriza
+la marca global frente a colores inline de usuarios. No cambia componentes,
+autenticación, datos, settings ni despliegues. Logo pendiente por falta de un
+vector RBLN identificable en las fuentes entregadas.
+
+Archivos exactos del parche:
+
+- `apps/web/app/layout.tsx`
+- `apps/web/styles/globals.css`
+- `apps/web/styles/rbln-theme.css`
+- `apps/web/fonts/rbln/Geist-Variable.woff2`
+- `apps/web/fonts/rbln/Geist-OFL.txt`
+- `apps/web/fonts/rbln/Manrope-700.ttf`
+- `apps/web/fonts/rbln/Manrope-OFL.txt`
+- `rbln/theme/preview.cjs`
+- `rbln/theme/README.md`
+- `rbln/evidence/UI-01/giuli-390.png`
+- `rbln/evidence/UI-01/giuli-1440.png`
+- `rbln/evidence/UI-01/login-390.png`
+- `rbln/evidence/UI-01/login-1440.png`
+- `rbln/evidence/UI-01/login-focus-390.png`
+- `rbln/evidence/UI-01/verification.json`
+- `rbln/evidence/UI-01/fonts.json`
+- `rbln/evidence/UI-01/contrast.json`
+- `rbln/evidence/UI-01/mutation.json`
+- `README-RBLN.md`
+- `PATCHES.md`
+
+[Validación y operación pendiente](rbln/theme/README.md). La evidencia verifica
+inyección del CSS final, no un build/deploy. Booker real pendiente: Giuli no
+ofrece eventos públicos. Mantener el mapa Cal/COSS y verificar los selectores
+auxiliares del login en cada merge. Revertir el commit UI-01 para retirar el
+parche; revertir al digest web previo para rollback operativo. No hay migración.
+
 ## Actualización
 
 1. `git fetch upstream main` y revisar un **SHA concreto posterior** (licencia,
