@@ -68,6 +68,13 @@ No usar los tags `v6.2.x` de Cal.com anteriores a la separación.
   `deploy/check-public-image.py` bloquea nombres privados en build-args, historial
   y entorno final; `.dockerignore` excluye configuración local. La CI no lee
   Infisical y publica exclusivamente con `GITHUB_TOKEN`, sin sobrescribir tags SHA.
+- P-03 — `deploy/sync-vars.sh` y `deploy/sync-vars.py`: réplica explícita desde
+  Infisical usando solo `bee-lector` (`leer.py`), `skipDeploys: true` y una
+  activación final por servicio. El sync formal de Infisical queda pendiente no
+  bloqueante de secrets-vault; no se usa ninguna credencial Admin.
+- P-06 — `deploy/t0-sink.py`: receptor efímero de correo/webhooks para T0, sin
+  envíos SMTP salientes, sin persistencia ni registros de payloads. Lectura de
+  capturas autenticada; webhook autenticado con HMAC sobre bytes crudos.
 
 I18N-01 — traducción mínima de `cancellation_reason_optional_label` en
 `packages/i18n/locales/es/common.json`, tras observar el fallback inglés real en
@@ -122,11 +129,3 @@ tipos corresponde al puente, sin cambio de Cal. Ver T0a/T0b en `rbln/evidence/`.
    aprobar el ensayo. Rollback y restauración se detallan en `deploy/railway.md`.
 
 El baseline continúa anclado aunque se publique una nueva revisión upstream.
-
-- P-03 — `deploy/sync-vars.sh` y `deploy/sync-vars.py`: réplica explícita desde
-  Infisical usando solo `bee-lector` (`leer.py`), `skipDeploys: true` y una
-  activación final por servicio. El sync formal de Infisical queda pendiente no
-  bloqueante de secrets-vault; no se usa ninguna credencial Admin.
-- P-06 — `deploy/t0-sink.py`: receptor efímero de correo/webhooks para T0, sin
-  envíos SMTP salientes, sin persistencia ni registros de payloads. Lectura de
-  capturas autenticada; webhook autenticado con HMAC sobre bytes crudos.

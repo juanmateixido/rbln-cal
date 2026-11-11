@@ -53,11 +53,7 @@ async function closeSession(context, browser, base, sessionId, purpose) {
 async function withSession(purpose, task) {
   const base = process.env.NEXT_PUBLIC_WEBAPP_URL;
   if (
-    ![
-      "https://cal-web-production-6281.up.railway.app",
-      "https://agenda.rebelion.training",
-      "https://rehearsal-web-update-rehearsal-20261017.up.railway.app",
-    ].includes(base)
+    !["https://cal-web-production-6281.up.railway.app", "https://agenda.rebelion.training"].includes(base)
   ) {
     throw new Error("Unapproved Cal origin");
   }
